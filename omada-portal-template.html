@@ -1,37 +1,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <span id="oper-hint" style="color: red"></span>
 <div id="hotspot-section">
     <select id="hotspot-selector"></select>
 </div>
 <form id="login-form">
     <div id="input-voucher">
-        <input id="voucherCode" name="voucherCode" type="text" placeholder="Voucher Code"/>
+        <input id="voucherCode" name="voucherCode" type="text" placeholder="Voucher Code" />
     </div>
     <div id="input-user">
-        <input id="username" name="username" type="text" placeholder="Username"/>
+        <input id="username" name="username" type="text" placeholder="Username" />
     </div>
     <div id="input-password" class="user-input">
-        <input id="password" name="password" type="password"  placeholder="Password"/>
+        <input id="password" name="password" type="password" placeholder="Password" />
     </div>
     <div id="input-simple">
-        <input id="simplePassword" name="simplePassword" type="password" placeholder="Password"/>
+        <input id="simplePassword" name="simplePassword" type="password" placeholder="Password" />
     </div>
     <div id="input-phone-num">
-        +<input id="country-code"><input id="phone-number" name="phone-number" type="text" placeholder="Phone Number"/>
+        +<input id="country-code"><input id="phone-number" name="phone-number" type="text" placeholder="Phone Number" />
     </div>
     <div id="input-verify-code">
-        <input id="verify-code" name="verify-code" type="text" placeholder="Verification Code"/><button id="get-code">Get Code</button>
+        <input id="verify-code" name="verify-code" type="text" placeholder="Verification Code" /><button id="get-code">Get Code</button>
     </div>
-    <input name="clientMac" id="cMac" style="display:none"/>
-    <input name="radiusSvrIp" id="radiusServerIp" style="display:none"/>
+    <input name="clientMac" id="cMac" style="display:none;" />
+    <input name="radiusSvrIp" id="radiusServerIp" style="display:none" />
 </form>
 <div id="button-area">
     <button id="button-facebook">Facebook</button><button id="button-login">Log In</button>
 </div>
 <script type="text/javascript">
     var Ajax = {
-        post: function (url, data, fn) {
+        post: function(url, data, fn) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
@@ -50,8 +50,8 @@
     var apMac = getQueryStringKey("apMac");
     var gatewayMac = getQueryStringKey("gatewayMac") || undefined;
     var ssidName = getQueryStringKey("ssidName") || undefined;
-    var radioId = !!getQueryStringKey("radioId")? Number(getQueryStringKey("radioId")) : undefined;
-    var vid = !!getQueryStringKey("vid")? Number(getQueryStringKey("vid")) : undefined;
+    var radioId = !!getQueryStringKey("radioId") ? Number(getQueryStringKey("radioId")) : undefined;
+    var vid = !!getQueryStringKey("vid") ? Number(getQueryStringKey("vid")) : undefined;
     var originUrl = getQueryStringKey("originUrl");
     var previewSite = getQueryStringKey("previewSite");
 
@@ -91,16 +91,20 @@
         "-41527": "Authentication failed because the local user is invalid."
     };
 
-    var facebookUrl = !!apMac? ('/portal/fbwifi/forward?clientMac='+encodeURIComponent(clientMac)+'&apMac='+encodeURIComponent(apMac)+'&ssidName='+encodeURIComponent(ssidName)+'&radioId='+encodeURIComponent(radioId)+'&originUrl='+encodeURIComponent(originUrl))
-        : ('/portal/fbwifi/forward?clientMac='+encodeURIComponent(clientMac)+'&gatewayMac='+encodeURIComponent(gatewayMac)+'&vid='+encodeURIComponent(vid)+'&originUrl='+encodeURIComponent(originUrl));
+    var facebookUrl = !!apMac ? ('/portal/fbwifi/forward?clientMac=' + encodeURIComponent(clientMac) + '&apMac=' + encodeURIComponent(apMac) + '&ssidName=' + encodeURIComponent(ssidName) + '&radioId=' + encodeURIComponent(radioId) + '&originUrl=' + encodeURIComponent(originUrl)) :
+        ('/portal/fbwifi/forward?clientMac=' + encodeURIComponent(clientMac) + '&gatewayMac=' + encodeURIComponent(gatewayMac) + '&vid=' + encodeURIComponent(vid) + '&originUrl=' + encodeURIComponent(originUrl));
 
     var isCommited;
-    function getQueryStringKey (key) {
+
+    function getQueryStringKey(key) {
         return getQueryStringAsObject()[key];
     }
-    function getQueryStringAsObject () {
+
+    function getQueryStringAsObject() {
         var b, cv, e, k, ma, sk, v, r = {},
-            d = function (v) { return decodeURIComponent(v); }, //# d(ecode) the v(alue)
+            d = function(v) {
+                return decodeURIComponent(v);
+            }, //# d(ecode) the v(alue)
             q = window.location.search.substring(1), //# suggested: q = decodeURIComponent(window.location.search.substring(1)),
             s = /([^&;=]+)=?([^&;]*)/g //# original regex that does not allow for ; as a delimiter:   /([^&=]+)=?([^&]*)/g
         ;
@@ -109,7 +113,9 @@
                 cv = v;
                 v = {};
                 v.length = 0;
-                if (cv) { Array.prototype.push.call(v, cv); }
+                if (cv) {
+                    Array.prototype.push.call(v, cv);
+                }
             }
             return v;
         };
@@ -121,17 +127,18 @@
                 if (r[k]) {
                     r[k] = ma(r[k]);
                     Array.prototype.push.call(r[k], v);
-                }
-                else {
+                } else {
                     r[k] = v;
                 }
-            }
-            else {
+            } else {
                 k = d(e[1].slice(0, b));
                 sk = d(e[1].slice(b + 1, e[1].indexOf("]", b)));
                 r[k] = ma(r[k]);
-                if (sk) { r[k][sk] = v; }
-                else { Array.prototype.push.call(r[k], v); }
+                if (sk) {
+                    r[k][sk] = v;
+                } else {
+                    Array.prototype.push.call(r[k], v);
+                }
             }
         }
         return r;
@@ -147,20 +154,21 @@
             "vid": vid,
             "originUrl": originUrl
         }),
-        function (res) {
+        function(res) {
             res = JSON.parse(res);
             data = res.result;
-            submitUrl           = "/portal/auth";
-            var landingUrl  = data.landingUrl;
-            isCommited          = false;
+            submitUrl = "/portal/auth";
+            var landingUrl = data.landingUrl;
+            isCommited = false;
             globalConfig = {
                 authType: data.authType,
                 hotspotTypes: !!data.hotspot && data.hotspot.enabledTypes || [],
-                error         : data.error || 'ok',
-                countryCode   : !!data.sms && data.sms.countryCode || 1
+                error: data.error || 'ok',
+                countryCode: !!data.sms && data.sms.countryCode || 1
             };
-            function pageConfigParse(){
-                if (res.errorCode !== 0){
+
+            function pageConfigParse() {
+                if (res.errorCode !== 0) {
                     document.getElementById("oper-hint").style.display = "block";
                     document.getElementById("oper-hint").innerHTML = errorHintMap[res.errorCode];
                 }
@@ -172,7 +180,7 @@
                 document.getElementById("input-phone-num").style.display = "none";
                 document.getElementById("input-verify-code").style.display = "none";
                 document.getElementById("button-facebook").style.display = "none";
-                switch (globalConfig.authType){
+                switch (globalConfig.authType) {
                     case 0:
                         window.authType = 0;
                         break;
@@ -186,7 +194,7 @@
                         break;
                     case 7:
                         document.getElementById("button-facebook").style.display = "block";
-                        document.getElementById("button-facebook").addEventListener("click", function () {
+                        document.getElementById("button-facebook").addEventListener("click", function() {
                             window.location.href = facebookUrl;
                         });
                         document.getElementById("button-login").style.display = "none";
@@ -195,8 +203,8 @@
                     case 11:
                         document.getElementById("hotspot-section").style.display = "block";
                         var options = "";
-                        for (var i=0;i<globalConfig.hotspotTypes.length;i++) {
-                            options += '<option value="'+globalConfig.hotspotTypes[i]+'">'+hotspotMap[globalConfig.hotspotTypes[i]]+'</option>';
+                        for (var i = 0; i < globalConfig.hotspotTypes.length; i++) {
+                            options += '<option value="' + globalConfig.hotspotTypes[i] + '">' + hotspotMap[globalConfig.hotspotTypes[i]] + '</option>';
                         }
                         document.getElementById("hotspot-selector").innerHTML = options;
                         hotspotChang(globalConfig.hotspotTypes[0]);
@@ -205,10 +213,10 @@
                 }
             }
 
-            function handleSubmit(){
+            function handleSubmit() {
                 var submitData = {};
                 submitData['authType'] = window.authType;
-                switch (window.authType){
+                switch (window.authType) {
                     case 3:
                         submitData['voucherCode'] = document.getElementById("voucherCode").value;
                         break;
@@ -222,7 +230,7 @@
                     case 0:
                         break;
                     case 6:
-                        submitData['phone'] = "+"+document.getElementById("country-code").value + document.getElementById("phone-number").value;
+                        submitData['phone'] = "+" + document.getElementById("country-code").value + document.getElementById("phone-number").value;
                         submitData['code'] = document.getElementById("verify-code").value;
                         break;
                     case 2:
@@ -234,27 +242,28 @@
                         break;
                 }
 
-                if(isCommited == false){
+                if (isCommited == false) {
                     submitData['clientMac'] = clientMac;
                     submitData['apMac'] = apMac;
                     submitData['gatewayMac'] = gatewayMac;
                     submitData['ssidName'] = ssidName;
                     submitData['radioId'] = radioId;
                     submitData['vid'] = vid;
-                    if(window.authType == 2 || window.authType == 8){
+                    if (window.authType == 2 || window.authType == 8) {
                         submitUrl = "/portal/radius/auth";
                         submitData['authType'] = window.authType;
                     } else {
                         submitData['originUrl'] = originUrl;
                     }
-                    function doAuth () {
-                        Ajax.post(submitUrl, JSON.stringify(submitData).toString(), function(data){
+
+                    function doAuth() {
+                        Ajax.post(submitUrl, JSON.stringify(submitData).toString(), function(data) {
                             data = JSON.parse(data);
-                            if(!!data && data.errorCode === 0) {
+                            if (!!data && data.errorCode === 0) {
                                 isCommited = true;
                                 window.location.href = landingUrl;
                                 document.getElementById("oper-hint").innerHTML = errorHintMap[data.errorCode];
-                            } else{
+                            } else {
                                 document.getElementById("oper-hint").innerHTML = errorHintMap[data.errorCode];
                             }
                         });
@@ -262,7 +271,8 @@
                     doAuth();
                 }
             }
-            function hotspotChang (type) {
+
+            function hotspotChang(type) {
 
                 document.getElementById("input-voucher").style.display = "none";
                 document.getElementById("input-user").style.display = "none";
@@ -289,16 +299,17 @@
             }
             globalConfig.countryCode = "+" + parseInt(globalConfig.countryCode, 10);
             document.getElementById("country-code").value = parseInt(globalConfig.countryCode, 10);
-            document.getElementById("hotspot-selector").addEventListener("change", function () {
+            document.getElementById("hotspot-selector").addEventListener("change", function() {
                 var obj = document.getElementById("hotspot-selector");
                 var opt = obj.options[obj.selectedIndex];
                 hotspotChang(opt.value);
             });
             document.getElementById("button-login").addEventListener("click", handleSubmit);
-            document.getElementById("get-code").addEventListener("click", function(e){
+            document.getElementById("get-code").addEventListener("click", function(e) {
                 e.preventDefault();
                 var phoneNum = document.getElementById("phone-number").value;
-                function sendSmsAuthCode () {
+
+                function sendSmsAuthCode() {
                     Ajax.post("/portal/sendSmsAuthCode",
                         JSON.stringify({
                             clientMac: clientMac,
@@ -308,9 +319,10 @@
                             radioId: radioId,
                             vid: vid,
                             phone: "+" + document.getElementById("country-code").value + phoneNum
-                        }),function(data){
+                        }),
+                        function(data) {
                             data = JSON.parse(data);
-                            if(data.errorCode !== 0){
+                            if (data.errorCode !== 0) {
                                 document.getElementById("oper-hint").innerHTML = errorHintMap[data.errorCode];
                             } else {
                                 document.getElementById("oper-hint").innerHTML = "SMS has been sent successfully.";
@@ -325,5 +337,3 @@
         }
     );
 </script>
-
-
