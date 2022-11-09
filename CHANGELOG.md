@@ -1,6 +1,13 @@
 # Wi-Fi Connect Changelog
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
+### v1.0.1
+> November 10, 2022
+- Fixed file cannot upload due to file limit 2MB. (Reduced image file size wihtout losing quality from [here](https://www.imagesmaller.com/))
+- Fixed log in button text not align center.
+- Fixed voucher code input field not clickable on mobile due to wrong z-indexing.
+
+
 ### v1.0.0
 > November 9, 2022
 - Changed the page icon `favicon.png`.
