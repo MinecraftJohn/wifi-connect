@@ -1,10 +1,8 @@
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - An Customized Omada Portal"/>
-  <br />
-  <br />
 </h2>
 
-> Warning: Assume that your customers don't have an internet connection so make sure you use base64 when importing an assets. The portal has file limit of 2MB, you can compress the file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/) and convert it into base64 at [base64-image.de](https://www.base64-image.de/).
+> Warning: Assume that your customers don't have an internet connection so make sure you use base64 when importing your assets. The custom portal has file limit of 2MB, you can compress the file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/) and convert it into base64 at [base64-image.de](https://www.base64-image.de/).
 
 ### What is this?
 
