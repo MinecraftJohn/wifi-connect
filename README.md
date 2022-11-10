@@ -1,5 +1,7 @@
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - An Customized Omada Portal"/>
+  <br />
+  <br />
 </h2>
 
 > Warning: Assume that your customers don't have an internet connection so make sure you use base64 when importing an assets. The portal has file limit of 2MB, you can compress the file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/) and convert it into base64 at [base64-image.de](https://www.base64-image.de/).
@@ -16,7 +18,7 @@ To customize your own Portal page for branding it as per your business, click [d
 - Using the look and feel of [Microsoft's Windows UI Controls](https://www.figma.com/community/file/1159947337437047524) which conform to the Fluent Design System.
 - Supports mobile and large screen sizes.
 - Assets imported to page, thanks to base64 method.
-- Custom interface and event upon login success.
+- Custom interface and events upon login success.
 
 ### Languages used
 
