@@ -1,6 +1,13 @@
 # Wi-Fi Connect Changelog
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
+### v1.1.0
+> November 17, 2022
+- Fixed button and input text field not rendering properly on mobile.
+- Disable useless auto complete on input fields.
+- Modified Omada template and include a recommended codes.
+
+
 ### v1.0.1
 > November 10, 2022
 - Fixed file cannot upload due to file limit 2MB. (Reduced image file size wihtout losing quality from [here](https://www.imagesmaller.com/))
