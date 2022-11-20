@@ -10,6 +10,8 @@ Wi-Fi Connect is an [Omada](https://omada.tplinkcloud.com/) Portal Customization
 
 To customize your own Portal page for branding it as per your business, click [download the template](https://github.com/MinecraftJohn/wifi-connect/blob/main/omada-portal-template.html).
 
+![Wi-Fi Connect UI Preview](https://github.com/MinecraftJohn/MinecraftJohn/blob/main/assets/other-repository/wifi-connect/wifi-connect-ui-preview.png?raw=true)
+
 ### Features
 
 - Light and Dark theme based on device time.

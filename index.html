@@ -29,7 +29,6 @@
             --control-secondary: rgba(249, 249, 249, 0.5);
             --control-active: #fff;
             --color-accent-disabled: rgba(0, 0, 0, 0.2169);
-            --btn-stroke: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 90.67%, rgba(0, 0, 0, 0.4) 100%) border-box;
             --text-primary: rgba(0, 0, 0, 0.8956);
             --text-secondary: rgba(0, 0, 0, 0.6063);
             --text-tertiary: rgba(0, 0, 0, 0.4458);
@@ -45,7 +44,6 @@
             --control-secondary: rgba(255, 255, 255, 0.0837);
             --control-active: rgba(30, 30, 30, 0.7);
             --color-accent-disabled: rgba(255, 255, 255, 0.1581);
-            --btn-stroke: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 90.67%, rgba(0, 0, 0, 0.14) 100%) border-box;
             --text-primary: #fff;
             --text-secondary: rgba(255, 255, 255, 0.786);
             --text-tertiary: rgba(255, 255, 255, 0.5442);
@@ -62,7 +60,7 @@
         
         .logo {
             position: absolute;
-            top: 15%;
+            top: 16%;
             left: 50%;
             transform: translateX(-50%);
             width: 60%;
@@ -115,26 +113,13 @@
             cursor: pointer;
             background-color: #005FB8;
             color: #fff;
-            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
             width: 100%;
             height: 42px;
             line-height: 42px;
-        }
-        
-        button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 4px;
-            border: 1px solid transparent;
-            background: var(--btn-stroke);
-            -webkit-mask: linear-gradient(red, red) padding-box, linear-gradient(red, red);
-            mask: linear-gradient(red, red) padding-box, linear-gradient(red, red);
-            -webkit-mask-composite: destination-out;
-            mask-composite: exclude;
         }
         
         button:hover {
@@ -143,10 +128,7 @@
         
         button:active {
             opacity: 0.8;
-        }
-        
-        button:active::before {
-            background: rgba(255, 255, 255, 0.08) border-box;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         button:focus-visible {
@@ -174,26 +156,9 @@
             justify-content: center;
             align-items: center;
             height: 42px;
-            background: transparent;
+            background: none;
             border-radius: 4px;
             overflow: hidden;
-        }
-        
-        #input-voucher::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 4px;
-            border: 1px solid transparent;
-            background: var(--control-border);
-            -webkit-mask: linear-gradient(red, red) padding-box, linear-gradient(red, red);
-            mask: linear-gradient(red, red) padding-box, linear-gradient(red, red);
-            -webkit-mask-composite: destination-out;
-            mask-composite: exclude;
-            pointer-events: none;
         }
         
         #input-line {
@@ -203,18 +168,16 @@
             width: 100%;
             height: 1px;
             background: var(--input-bottom-inactive);
-            z-index: 2;
         }
         
         input {
-            width: calc(100% - 2px);
-            height: 40px;
-            border-radius: 3px;
+            width: 100%;
+            height: 100%;
             background: var(--control-default);
-            border: none;
-            z-index: 1;
+            border: 1px solid var(--control-border);
             color: var(--text-primary);
             padding: 0 11px;
+            border-radius: 4px;
         }
         
         input:hover {
@@ -296,7 +259,7 @@
         <div id="hotspot-section">
             <select id="hotspot-selector"></select>
         </div>
-        <form id="login-form">
+        <form id="login-form" autocomplete="off">
             <div id="input-voucher">
                 <input id="voucherCode" name="voucherCode" type="text" placeholder="Voucher Code" />
                 <div id="input-line"></div>
@@ -447,9 +410,9 @@
             var b, cv, e, k, ma, sk, v, r = {},
                 d = function(v) {
                     return decodeURIComponent(v);
-                }, //# d(ecode) the v(alue)
-                q = window.location.search.substring(1), //# suggested: q = decodeURIComponent(window.location.search.substring(1)),
-                s = /([^&;=]+)=?([^&;]*)/g //# original regex that does not allow for ; as a delimiter:   /([^&=]+)=?([^&]*)/g
+                },
+                q = window.location.search.substring(1),
+                s = /([^&;=]+)=?([^&;]*)/g
             ;
             ma = function(v) {
                 if (typeof v != "object") {
