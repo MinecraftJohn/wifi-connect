@@ -2,6 +2,12 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.5.29a
+> May 28, 2023
+- Reduced line of codes and change button state from JS to CSS at `index.html`.
+- Renamed the `voucher-creator.html` to `voucher-generator.html`.
+- Partially added layout at voucher generator page.
+
 ### v23.5.28a
 > May 28, 2023
 - Fixed voucher input field accepts text at `index.html`.
