@@ -1,60 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" theme="day">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F1F3F9" />
     <title>Document</title>
-    <script>
-      const time = new Date();
-      document
-        .getElementsByTagName("html")[0]
-        .setAttribute(
-          "theme",
-          time.getHours() >= 6 && time.getHours() <= 17 ? "day" : "night"
-        );
-      document
-        .getElementsByTagName("meta")[3]
-        .setAttribute(
-          "content",
-          time.getHours() >= 6 && time.getHours() <= 17 ? "#F1F3F9" : "#1A2030"
-        );
-    </script>
     <style>
-      * {
-        font-family: "Segoe UI Variable Display";
-        color: var(--text-primary);
-        font-size: 14px;
-        -webkit-tap-highlight-color: transparent;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
+      /* #############################################################
+      #
+      #  Font name: Segoe UI Variable
+      #  Owner: Microsoft Corporation
+      #  Link: https://learn.microsoft.com/en-us/windows/apps/design/downloads/#fonts
+      #
+      ################################################################ */
+
+      @font-face {
+          font-family: "Segoe UI Variable Display";
+          src: url(./assets/fonts/Segoe-UI-Variable-Static-Display-Light.ttf);
+          font-weight: 300;
       }
+
+      @font-face {
+          font-family: "Segoe UI Variable Display";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Display-Semilight.ttf);
+          font-weight: 350;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Display";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Display.ttf);
+          font-weight: 400;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Display";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Display-Semibold.ttf);
+          font-weight: 600;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Display";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Display-Bold.ttf);
+          font-weight: 700;
+      }
+
+
+      /* ################################################################ */
+
+      @font-face {
+          font-family: "Segoe UI Variable Small";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Light.ttf);
+          font-weight: 300;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Small";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Semilight.ttf);
+          font-weight: 350;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Small";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Small.ttf);
+          font-weight: 400;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Small";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Semibold.ttf);
+          font-weight: 600;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Small";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Bold.ttf);
+          font-weight: 700;
+      }
+
+
+      /* ################################################################ */
+
+      @font-face {
+          font-family: "Segoe UI Variable Text";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Light.ttf);
+          font-weight: 300;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Text";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Semilight.ttf);
+          font-weight: 350;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Text";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Text.ttf);
+          font-weight: 400;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Text";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Semibold.ttf);
+          font-weight: 600;
+      }
+
+      @font-face {
+          font-family: "Segoe UI Variable Text";
+          src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Bold.ttf);
+          font-weight: 700;
+      }
+
+
+      /* ################################################################ */
+
+      @font-face {
+          font-family: "Segoe Fluent Icons";
+          src: url(./assets/fonts//Segoe-Fluent-Icons.ttf);
+      }
+
+      /* ################################################################ */
 
       html {
-        /* min-height: fill-available;
-        min-height: -webkit-fill-available; */
+        overflow: hidden;
+        background-color: #1A2030;
       }
 
-      html[theme="day"] {
-        --color-error: #c42b1c;
-        --input-bottom-inactive: rgba(0, 0, 0, 0.4458);
-        --control-border: rgba(0, 0, 0, 0.0578);
-        --control-default: rgba(255, 255, 255, 0.7);
-        --control-secondary: rgba(249, 249, 249, 0.5);
-        --control-active: #fff;
-        --color-accent-disabled: rgba(0, 0, 0, 0.2169);
-        --text-primary: rgba(0, 0, 0, 0.8956);
-        --text-secondary: rgba(0, 0, 0, 0.6063);
-        --text-tertiary: rgba(0, 0, 0, 0.4458);
-        --property-focus: 0 0 0 1px #fff, 0 0 0 3px #000;
-        --bg-img: url(/assets/img/bloom-mica-light.png) center center/cover
-          no-repeat;
-      }
-
-      html[theme="night"] {
+      .root {
         --color-error: #ff99a4;
         --input-bottom-inactive: rgba(255, 255, 255, 0.5442);
         --control-border: rgba(255, 255, 255, 0.08);
@@ -66,16 +138,32 @@
         --text-secondary: rgba(255, 255, 255, 0.786);
         --text-tertiary: rgba(255, 255, 255, 0.5442);
         --property-focus: 0 0 0 1px rgba(0, 0, 0, 0.7), 0 0 0 3px #fff;
-        --bg-img: url(/assets/img/bloom-mica-dark.png) center center/cover
+        --bg-img: url(./assets/img/bloom-mica-dark.png) center center/cover
           no-repeat;
+      }
+
+      * {
+        font-family: "Segoe UI Variable Text";
+        color: #fff;
+        font-size: 14px;
+        -webkit-tap-highlight-color: transparent;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
       }
 
       body {
         display: flex;
-        position: relative;
-        /* min-height: 100vh;
-        min-height: fill-available;
-        min-height: -webkit-fill-available; */
+      }
+
+      .icon {
+        font-family: "Segoe Fluent Icons";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        color: currentColor;
       }
 
       button {
@@ -86,6 +174,7 @@
         align-items: center;
         border-radius: 4px;
         cursor: pointer;
+        user-select: none;
         background-color: #005fb8;
         color: #fff;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -117,76 +206,77 @@
         overflow: hidden;
       }
 
+      .input-container.textarea {
+        height: auto;
+      }
+
+      .input-container.textarea textarea {
+        margin-bottom: -4px;
+      }
+
       .input-line {
         position: absolute;
         bottom: 0;
         width: 100%;
         height: 1px;
-        background: var(--input-bottom-inactive);
+        background-color: rgba(255, 255, 255, 0.5442);
       }
 
       .input-container input:focus + .input-line,
       .input-container textarea:focus + .input-line {
         height: 2px;
-        background: #0067c0;
+        background-color: #0067c0;
       }
 
-      input,
+      input[type="text"],
+      input[type="number"],
       textarea {
         width: 100%;
         height: 100%;
-        background: var(--control-default);
-        border: 1px solid var(--control-border);
-        color: var(--text-primary);
+        background-color: rgba(30, 30, 30, 0.7);
+        border: 1px solid #30363d;
         padding: 0 11px;
         border-radius: 4px;
       }
 
-      input:hover,
-      textarea:hover {
-        background: var(--control-secondary);
-      }
-
       input:focus,
       textarea:focus {
-        background: var(--control-active);
-      }
-
-      input::placeholder,
-      textarea::placeholder {
-        color: var(--text-secondary);
-        opacity: 1;
-      }
-
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
+        border: 1px solid #30363d;
       }
 
       textarea {
-        resize: vertical;
-        min-height: 38px;
+        resize: none;
+        height: 256px;
         padding: 11px;
       }
 
       aside {
-        background: var(--control-active);
+        display: flex;
+        flex-direction: column;
+        background-color: #1A2030;
         flex-shrink: 0;
-        width: 333px;
-        border-right: 1px solid var(--control-border);
+        width: 300px;
+        height: 100vh;
+        border-right: 1px solid #30363d;
       }
 
       .heading-container {
         padding: 32px 32px 16px;
-        border-bottom: 1px solid var(--control-border);
+        border-bottom: 1px solid #30363d;
+      }
+
+      .heading-container p {
+        font-family: "Segoe UI Variable Small";
+        font-size: 12px;
+        padding-top: 8px;
       }
 
       .form-container {
         display: flex;
         flex-direction: column;
         gap: 24px;
-        padding: 16px 32px;
+        flex-grow: 1;
+        padding: 16px 32px 0;
       }
 
       .form-container .group {
@@ -195,45 +285,116 @@
         gap: 8px;
       }
 
-      main {
-        position: relative;
-        padding: 32px;
-        flex-grow: 1;
-        background: var(--bg-img);
+      .form-container .group p {
+        font-family: "Segoe UI Variable Small";
+        font-size: 12px;
+        font-weight: bold;
       }
 
-      .container-wrapper {
-        width: 100%;
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .more-settings {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 32px;
+        border-radius: 4px;
+        color: #00aeff;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .more-settings:hover {
+        background-color: rgba(255, 255, 255, 0.0605);
+      }
+
+      .more-settings:active {
+        background-color: rgba(255, 255, 255, 0.0419);
+      }
+
+      .more-settings-container {
+        display: none;
+      }
+
+      #more-settings {
+        display: none;
+      }
+
+      #more-settings:checked ~ .more-settings-container  {
+        display: block;
+      }
+
+      .form-footer {
+        position: sticky;
+        bottom: 0;
+        padding: 16px 32px 32px;
+        background-color: #1A2030;
+        border-top: 1px solid #30363d;
+      }
+
+      main {
+        flex-grow: 1;
+        overflow-y: scroll;
+        height: 100vh;
+      }
+
+      .header-section {
+        position: sticky;
+        top: 0;
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 16px;
+        z-index: 1;
+        height: 80px;
+        margin: 16px;
+        padding: 0 32px;
+        background-color: #1A2030;
+        background: url(./assets/img/bloom-mica-dark.png) center center/cover no-repeat;
+        border-radius: 8px; */
       }
 
       h1 {
         font-size: 24px;
       }
 
-      .voucher-preview {
-        position: relative;
-        background-color: #fff;
-        width: 128px;
-        height: 64px;
-        border: 1px solid #c42b1c;
-      }
-
-      .voucher-preview .duration {
-        position: absolute;
-        right: 0;
-        background-color: #000;
-        padding: 4px;
-        border-radius: 4px;
+      .header-section button {
+        flex-direction: row;
+        gap: 8px;
+        width: auto;
+        background-color: rgba(255, 255, 255, 0.0605);
         color: #fff;
+        padding: 0 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.093);
+        border-left: 1px solid rgba(255, 255, 255, 0.0698);
+        border-right: 1px solid rgba(255, 255, 255, 0.0698);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.0698);
       }
 
-      .voucher-preview .heading {
-        display: block;
-        font-size: 8px;
+      .header-section button:hover {
+        background-color: rgba(255, 255, 255, 0.0837);
       }
 
-      .voucher-preview .code {
-        display: block;
+      .header-section button:active {
+        background-color: rgba(255, 255, 255, 0.0326);
+        color: rgba(255, 255, 255, 0.786);
+        border: 1px solid rgba(255, 255, 255, 0.093);
+      }
+
+      .voucher-preview-container {
+        margin-top: 48px;
+      }
+
+      .voucher-preview {
+        background-color: #fff;
+        width: 8.5in;
+        height: 11in;
+        margin: auto;
       }
     </style>
   </head>
@@ -253,24 +414,55 @@
         </div>
         <div class="group">
           <p>Voucher Codes:</p>
-          <div>
-            <!-- <input type="text" placeholder="000000" /> -->
-            <textarea cols="30" rows="10" placeholder="shhhh"></textarea>
+          <div class="input-container textarea">
+            <textarea
+              placeholder="000000&#10;&#10;or&#10;&#10;000000&#10;777777&#10;999999&#10;(to add multiple entry)"
+            ></textarea>
             <div class="input-line"></div>
           </div>
         </div>
+        <div class="details">
+          <input type="checkbox" id="more-settings" />
+          <label for="more-settings" class="more-settings"
+            >More settings <i class="icon">&#xe70d;</i>
+          </label>
+          <div class="more-settings-container">
+            <div class="group">
+              <p>Duration Background Color:</p>
+              <div class="input-container">
+                <input type="number" placeholder="0" />
+                <div class="input-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="form-footer">
+        <button>Add voucher</button>
       </section>
     </aside>
     <main>
-      <div class="container-wrapper">
-        <h1>Voucher Generator</h1>
-        <section class="voucher-preview">
-          <b class="duration">16 hrs</b>
-          <span class="logo">Wi-Fi Connect</span>
-          <span class="heading">Voucher Code:</span>
-          <b class="code">2345678954</b>
-        </section>
-      </div>
+      <header class="header-section">
+        <div class="header-container">
+          <h1>Voucher Generator Preview</h1>
+          <button><i class="icon">&#xe749;</i> Print vouchers</button>
+        </div>
+      </header>
+      <section class="voucher-preview-container">
+        <section class="voucher-preview"></section>
+      </section>
     </main>
+    <script>
+      const moreSettingsBtn = document.getElementById("more-settings"),
+        moreSettingsIcon = document.querySelectorAll(".more-settings .icon");
+
+      moreSettingsBtn.addEventListener("change", () => {
+        if (moreSettingsBtn.checked) {
+          moreSettingsIcon[0].innerText = "\ue70e";
+        } else {
+          moreSettingsIcon[0].innerText = "\ue70d";
+        }
+      });
+    </script>
   </body>
 </html>
