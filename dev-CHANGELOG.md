@@ -2,10 +2,21 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.6.25a
+> June 23, 2023
+- Set title and favicon for `voucher-generator.html`.
+- Fixed/Finalized header section.
+
+### v23.6.23a
+> June 23, 2023
+- Added fonts folder at `assets/fonts/`.
+- Improved the aside section at `voucher-generator.html`.
+- Added header section and main section.
+
 ### v23.6.12a
 > June 12, 2023
 - Added the new advanced voucher layout including the excel where we can put the codes.
-- 
+- Partially added an instruction on how to use the method.
 
 ### v23.5.29a
 > May 28, 2023
