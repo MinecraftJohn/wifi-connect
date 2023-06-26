@@ -2,8 +2,13 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.6.26a
+> June 26, 2023
+- Reorganized the class styles for better maintainability.
+- Partially added input select at duration section.
+
 ### v23.6.25a
-> June 23, 2023
+> June 25, 2023
 - Set title and favicon for `voucher-generator.html`.
 - Fixed/Finalized header section.
 
