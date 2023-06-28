@@ -2,6 +2,13 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.6.28a
+> June 28, 2023
+- Removed unused style property for button.
+- Fixed custom select styles.
+- Added custom style for all scrollbar.
+- Fixed aside form not scrolling on overflow elements.
+
 ### v23.6.26a
 > June 26, 2023
 - Reorganized the class styles for better maintainability.

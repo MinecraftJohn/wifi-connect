@@ -139,6 +139,20 @@
         outline: none;
       }
 
+      *::-webkit-scrollbar {
+        background-color: transparent;
+        width: 8px;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.0605);
+        border-radius: 4px;
+      }
+
+      *::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
       body {
         display: flex;
       }
@@ -179,10 +193,6 @@
       button:active {
         opacity: 0.8;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      button:focus-visible {
-        box-shadow: var(--property-focus);
       }
 
       .input-container {
@@ -236,7 +246,12 @@
         padding: 11px;
       }
 
+      .input-container:has(.voucher-codes) {
+        height: 256px;
+      }
+
       aside {
+        position: relative;
         display: flex;
         flex-direction: column;
         background-color: #1a2030;
@@ -247,6 +262,7 @@
       }
 
       .heading-container {
+        position: relative;
         padding: 32px 32px 16px;
         border-bottom: 1px solid #30363d;
       }
@@ -257,12 +273,31 @@
         padding-top: 8px;
       }
 
+      .heading-container .icon {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .heading-container .icon:hover {
+        background-color: rgba(255, 255, 255, 0.0605);
+      }
+
+      .heading-container .icon:active {
+        background-color: rgba(255, 255, 255, 0.0419);
+        color: rgba(255, 255, 255, 0.786);
+      }
+
       .form-container {
         display: flex;
         flex-direction: column;
         gap: 24px;
-        flex-grow: 1;
-        padding: 16px 32px 0;
+        padding: 16px 32px;
+        height: calc(100vh - 210px);
+        overflow-y: auto;
       }
 
       .form-container .group {
@@ -311,15 +346,22 @@
       }
 
       #more-settings:checked ~ .more-settings-container {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
       }
 
       .form-footer {
-        position: sticky;
+        position: absolute;
         bottom: 0;
+        width: 100%;
         padding: 32px;
         background-color: #1a2030;
         border-top: 1px solid #30363d;
+      }
+
+      .form-footer button {
+        height: 40px;
       }
 
       main {
@@ -385,7 +427,7 @@
       }
 
       .voucher-preview-container {
-        margin-top: 48px;
+        margin-top: 32px;
       }
 
       .voucher-preview {
@@ -407,26 +449,47 @@
         border-radius: 4px 0 0 4px;
       }
 
-      .input-select-group select {
+      .select-group {
+        position: relative;
+        display: flex;
+      }
+
+      .select-group select {
         appearance: none;
         border-radius: 0 4px 4px 0;
         width: auto;
-        padding: 0 16px 0 16px;
+        padding: 0 26px 0 8px;
       }
 
-      .input-select-group .icon {
+      .select-group select option {
+        color: rgba(0, 0, 0, 0.8956);
+      }
+
+      .select-group .icon {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 12px;
         line-height: 12px;
-        margin-left: -16px;
         pointer-events: none;
+      }
+
+      .input.color {
+        border-radius: 0 4px 4px 0;
+        flex-shrink: 0;
+        height: 100%;
+        width: 86px;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <aside>
       <section class="heading-container">
-        <h1>Options</h1>
-        <p>Customize the data and style.</p>
+        <h1>Wi-Fi Connect</h1>
+        <p>A voucher generator page.</p>
+        <!-- <i class="icon" title="Settings">&#xe713;</i> -->
       </section>
       <section class="form-container">
         <div class="group">
@@ -436,38 +499,54 @@
               <input type="number" placeholder="0" class="input" />
               <div class="input-line"></div>
             </div>
-            <select class="btn-standard">
-              <option value="m">Minutes</option>
-              <option value="h">Hours</option>
-              <option value="d">Days</option>
-            </select>
-            <i class="icon">&#xe70d;</i>
-          </div>
-        </div>
-        <div class="details">
-          <input type="checkbox" id="more-settings" />
-          <label for="more-settings" class="more-settings"
-            >More settings <i class="icon">&#xe70d;</i>
-          </label>
-          <div class="more-settings-container">
-            <div class="group">
-              <p>Duration Background Color:</p>
-              <div class="input-container">
-                <input type="number" placeholder="0" />
-                <div class="input-line"></div>
-              </div>
+            <div class="select-group">
+              <select class="btn-standard">
+                <option value="m">Minutes</option>
+                <option value="h" selected>Hours</option>
+                <option value="d">Days</option>
+              </select>
+              <i class="icon">&#xe70d;</i>
             </div>
           </div>
         </div>
         <div class="group">
           <p>Voucher Codes:</p>
-          <div class="input-container textarea">
+          <div class="input-container">
             <textarea
-              placeholder="000000&#10;&#10;or&#10;&#10;000000&#10;777777&#10;999999&#10;(to add multiple entry)"
+              placeholder="xxxxxx&#10;&#10;or&#10;&#10;xxxxxx&#10;yyyyyy&#10;zzzzzz&#10;(to add multiple entry)"
+              class="textarea voucher-codes"
             ></textarea>
             <div class="input-line"></div>
           </div>
         </div>
+        <!-- <div class="details">
+          <input type="checkbox" id="more-settings" />
+          <label for="more-settings" class="more-settings"
+            >Change colors <i class="icon">&#xe70d;</i>
+          </label>
+          <div class="more-settings-container">
+            <div class="group">
+              <p>Duration Background:</p>
+              <div class="input-select-group">
+                <div class="input-container">
+                  <input type="text" placeholder="#000000" class="input" />
+                  <div class="input-line"></div>
+                </div>
+                <input type="color" class="input color btn-standard" />
+              </div>
+            </div>
+            <div class="group">
+              <p>Duration Background:</p>
+              <div class="input-select-group">
+                <div class="input-container">
+                  <input type="text" placeholder="#000000" class="input" />
+                  <div class="input-line"></div>
+                </div>
+                <input type="color" class="input color btn-standard" />
+              </div>
+            </div>
+          </div>
+        </div> -->
       </section>
       <section class="form-footer">
         <button><i class="icon">&#xe710;</i>Add voucher</button>
@@ -476,7 +555,7 @@
     <main>
       <header class="header-section">
         <div class="header-container">
-          <h1>Voucher Generator Preview</h1>
+          <h1>Document Preview</h1>
           <button class="btn-standard">
             <i class="icon">&#xe749;</i>Print vouchers
           </button>
