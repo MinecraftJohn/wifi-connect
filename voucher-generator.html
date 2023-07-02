@@ -11,499 +11,34 @@
       href="assets/img/favicon.png"
       type="image/x-icon"
     />
-    <style>
-      /* #############################################################
-      #
-      #  Font name: Segoe UI Variable
-      #  Owner: Microsoft Corporation
-      #  Link: https://learn.microsoft.com/en-us/windows/apps/design/downloads/#fonts
-      #
-      ################################################################ */
-
-      @font-face {
-        font-family: "Segoe UI Variable Display";
-        src: url(./assets/fonts/Segoe-UI-Variable-Static-Display-Light.ttf);
-        font-weight: 300;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Display";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Display-Semilight.ttf);
-        font-weight: 350;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Display";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Display.ttf);
-        font-weight: 400;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Display";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Display-Semibold.ttf);
-        font-weight: 600;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Display";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Display-Bold.ttf);
-        font-weight: 700;
-      }
-
-      /* ################################################################ */
-
-      @font-face {
-        font-family: "Segoe UI Variable Small";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Light.ttf);
-        font-weight: 300;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Small";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Semilight.ttf);
-        font-weight: 350;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Small";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Small.ttf);
-        font-weight: 400;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Small";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Semibold.ttf);
-        font-weight: 600;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Small";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Small-Bold.ttf);
-        font-weight: 700;
-      }
-
-      /* ################################################################ */
-
-      @font-face {
-        font-family: "Segoe UI Variable Text";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Light.ttf);
-        font-weight: 300;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Text";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Semilight.ttf);
-        font-weight: 350;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Text";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Text.ttf);
-        font-weight: 400;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Text";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Semibold.ttf);
-        font-weight: 600;
-      }
-
-      @font-face {
-        font-family: "Segoe UI Variable Text";
-        src: url(./assets/fonts//Segoe-UI-Variable-Static-Text-Bold.ttf);
-        font-weight: 700;
-      }
-
-      /* ################################################################ */
-
-      @font-face {
-        font-family: "Segoe Fluent Icons";
-        src: url(./assets/fonts//Segoe-Fluent-Icons.ttf);
-      }
-
-      /* ################################################################ */
-
-      html {
-        overflow: hidden;
-        background-color: #1a2030;
-      }
-
-      * {
-        font-family: "Segoe UI Variable Text";
-        color: #fff;
-        font-size: 14px;
-        -webkit-tap-highlight-color: transparent;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-      }
-
-      *::-webkit-scrollbar {
-        background-color: transparent;
-        width: 8px;
-      }
-
-      *::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.0605);
-        border-radius: 4px;
-      }
-
-      *::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-
-      body {
-        display: flex;
-      }
-
-      .icon {
-        font-family: "Segoe Fluent Icons";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 16px;
-        color: currentColor;
-        user-select: none;
-      }
-
-      button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-        cursor: pointer;
-        user-select: none;
-        background-color: #005fb8;
-        color: #fff;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        border-right: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-        border-left: 1px solid rgba(255, 255, 255, 0.08);
-        width: 100%;
-        height: 32px;
-        gap: 8px;
-        padding: 0 24px;
-      }
-
-      button:hover {
-        opacity: 0.9;
-      }
-
-      button:active {
-        opacity: 0.8;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .input-container {
-        position: relative;
-        height: 32px;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .input-container.textarea {
-        height: auto;
-      }
-
-      .input-container.textarea textarea {
-        margin-bottom: -4px;
-      }
-
-      .input-line {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        background-color: rgba(255, 255, 255, 0.5442);
-      }
-
-      .input-container .input:focus + .input-line,
-      .input-container .textarea:focus + .input-line {
-        height: 2px;
-        background-color: #0067c0;
-      }
-
-      .input[type="text"],
-      .input[type="number"],
-      .textarea {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(30, 30, 30, 0.7);
-        border: 1px solid #30363d;
-        padding: 0 11px;
-        border-radius: 4px;
-      }
-
-      .input:focus,
-      .textarea:focus {
-        border: 1px solid #30363d;
-      }
-
-      .textarea {
-        resize: none;
-        height: 256px;
-        padding: 11px;
-      }
-
-      .input-container:has(.voucher-codes) {
-        height: 256px;
-      }
-
-      aside {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background-color: #1a2030;
-        flex-shrink: 0;
-        width: 300px;
-        height: 100vh;
-        border-right: 1px solid #30363d;
-      }
-
-      .heading-container {
-        position: relative;
-        padding: 32px 32px 16px;
-        border-bottom: 1px solid #30363d;
-      }
-
-      .heading-container p {
-        font-family: "Segoe UI Variable Small";
-        font-size: 12px;
-        padding-top: 8px;
-      }
-
-      .heading-container .icon {
-        position: absolute;
-        right: 32px;
-        top: 32px;
-        padding: 8px;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      .heading-container .icon:hover {
-        background-color: rgba(255, 255, 255, 0.0605);
-      }
-
-      .heading-container .icon:active {
-        background-color: rgba(255, 255, 255, 0.0419);
-        color: rgba(255, 255, 255, 0.786);
-      }
-
-      .form-container {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        padding: 16px 32px;
-        height: calc(100vh - 210px);
-        overflow-y: auto;
-      }
-
-      .form-container .group {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .form-container .group p {
-        font-family: "Segoe UI Variable Small";
-        font-size: 12px;
-        font-weight: bold;
-      }
-
-      .details {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .more-settings {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        height: 32px;
-        border-radius: 4px;
-        color: #00aeff;
-        cursor: pointer;
-        user-select: none;
-      }
-
-      .more-settings:hover {
-        background-color: rgba(255, 255, 255, 0.0605);
-      }
-
-      .more-settings:active {
-        background-color: rgba(255, 255, 255, 0.0419);
-      }
-
-      .more-settings-container {
-        display: none;
-      }
-
-      #more-settings {
-        display: none;
-      }
-
-      #more-settings:checked ~ .more-settings-container {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .form-footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding: 32px;
-        background-color: #1a2030;
-        border-top: 1px solid #30363d;
-      }
-
-      .form-footer button {
-        height: 40px;
-      }
-
-      main {
-        flex-grow: 1;
-        overflow-y: scroll;
-        height: 100vh;
-      }
-
-      .header-section {
-        position: sticky;
-        top: 0;
-        background-color: #1a2030;
-        padding: 16px 16px 0;
-      }
-
-      .header-section::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(26, 32, 48, 0.666),
-          transparent
-        );
-        width: 100%;
-        height: 16px;
-      }
-
-      .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: url(./assets/img/bloom-mica-dark.png) center center/cover
-          no-repeat;
-        height: 80px;
-        padding: 0 32px;
-        border-radius: 8px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .btn-standard {
-        flex-direction: row;
-        width: auto;
-        background-color: rgba(255, 255, 255, 0.0605);
-        color: #fff;
-        border-top: 1px solid rgba(255, 255, 255, 0.093);
-        border-left: 1px solid rgba(255, 255, 255, 0.0698);
-        border-right: 1px solid rgba(255, 255, 255, 0.0698);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.0698);
-      }
-
-      .btn-standard:hover {
-        background-color: rgba(255, 255, 255, 0.0837);
-      }
-
-      .btn-standard:active {
-        background-color: rgba(255, 255, 255, 0.0326);
-        color: rgba(255, 255, 255, 0.786);
-        border: 1px solid rgba(255, 255, 255, 0.093);
-      }
-
-      .voucher-preview-container {
-        margin-top: 32px;
-      }
-
-      .voucher-preview {
-        background-color: #fff;
-        width: 8.5in;
-        height: 11in;
-        margin: auto;
-      }
-
-      .input-select-group {
-        display: flex;
-      }
-
-      .input-select-group .input-container {
-        border-radius: 4px 0 0 4px;
-      }
-
-      .input-select-group .input {
-        border-radius: 4px 0 0 4px;
-      }
-
-      .select-group {
-        position: relative;
-        display: flex;
-      }
-
-      .select-group select {
-        appearance: none;
-        border-radius: 0 4px 4px 0;
-        width: auto;
-        padding: 0 26px 0 8px;
-      }
-
-      .select-group select option {
-        color: rgba(0, 0, 0, 0.8956);
-      }
-
-      .select-group .icon {
-        position: absolute;
-        right: 8px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 12px;
-        line-height: 12px;
-        pointer-events: none;
-      }
-
-      .input.color {
-        border-radius: 0 4px 4px 0;
-        flex-shrink: 0;
-        height: 100%;
-        width: 86px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/generator-style.css" />
+    <script src="assets/js/generator-script.js" defer></script>
   </head>
   <body>
     <aside>
       <section class="heading-container">
         <h1>Wi-Fi Connect</h1>
         <p>A voucher generator page.</p>
-        <!-- <i class="icon" title="Settings">&#xe713;</i> -->
       </section>
       <section class="form-container">
         <div class="group">
           <p>Duration:</p>
           <div class="input-select-group">
             <div class="input-container">
-              <input type="number" placeholder="0" class="input" />
+              <input
+                type="number"
+                placeholder="0"
+                min="0"
+                class="input"
+                id="data-duration-time"
+              />
               <div class="input-line"></div>
             </div>
             <div class="select-group">
-              <select class="btn-standard">
-                <option value="m">Minutes</option>
-                <option value="h" selected>Hours</option>
-                <option value="d">Days</option>
+              <select class="btn-standard" id="data-duration-type">
+                <option value="min">Minutes</option>
+                <option value="hrs" selected>Hours</option>
+                <option value="day">Days</option>
               </select>
               <i class="icon">&#xe70d;</i>
             </div>
@@ -513,43 +48,51 @@
           <p>Voucher Codes:</p>
           <div class="input-container">
             <textarea
-              placeholder="xxxxxx&#10;&#10;or&#10;&#10;xxxxxx&#10;yyyyyy&#10;zzzzzz&#10;(to add multiple entry)"
+              placeholder="xxxxxx&#10;yyyyyy&#10;zzzzzz&#10;(to add multiple entry)"
               class="textarea voucher-codes"
+              id="data-vouchers"
             ></textarea>
             <div class="input-line"></div>
           </div>
         </div>
-        <!-- <div class="details">
+        <div class="details">
           <input type="checkbox" id="more-settings" />
           <label for="more-settings" class="more-settings"
-            >Change colors <i class="icon">&#xe70d;</i>
+            >More options <i class="icon">&#xe70d;</i>
           </label>
           <div class="more-settings-container">
-            <div class="group">
-              <p>Duration Background:</p>
-              <div class="input-select-group">
-                <div class="input-container">
-                  <input type="text" placeholder="#000000" class="input" />
-                  <div class="input-line"></div>
-                </div>
-                <input type="color" class="input color btn-standard" />
+            <div class="group-option">
+              <p>Layout Size (8.5x13in):</p>
+              <div class="input-switch">
+                <input type="checkbox" id="data-page-layout" checked />
+                <label for="data-page-layout"></label>
               </div>
             </div>
-            <div class="group">
+            <div class="group-option">
+              <p>Colored Logo:</p>
+              <div class="input-switch">
+                <input type="checkbox" id="data-color-logo" />
+                <label for="data-color-logo"></label>
+              </div>
+            </div>
+            <div class="group-option">
               <p>Duration Background:</p>
               <div class="input-select-group">
-                <div class="input-container">
-                  <input type="text" placeholder="#000000" class="input" />
-                  <div class="input-line"></div>
-                </div>
-                <input type="color" class="input color btn-standard" />
+                <input
+                  type="color"
+                  class="input color btn-standard"
+                  id="data-duration-bg"
+                />
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
       </section>
       <section class="form-footer">
-        <button><i class="icon">&#xe710;</i>Add voucher</button>
+        <button id="data-submit-btn">
+          <i class="icon">&#xe73e;</i>Save changes
+        </button>
+        <p>Error creating the vouchers.</p>
       </section>
     </aside>
     <main>
@@ -562,20 +105,17 @@
         </div>
       </header>
       <section class="voucher-preview-container">
-        <section class="voucher-preview"></section>
+        <div class="page-layout">
+          <div class="voucher-container">
+            <img
+              src="assets/svg/wifi-connect-logo-black.svg"
+              alt="Wi-Fi Connect Logo"
+            />
+            <p>8002929</p>
+            <span>2 hrs</span>
+          </div>
+        </div>
       </section>
     </main>
-    <script>
-      const moreSettingsBtn = document.getElementById("more-settings"),
-        moreSettingsIcon = document.querySelectorAll(".more-settings .icon");
-
-      moreSettingsBtn.addEventListener("change", () => {
-        if (moreSettingsBtn.checked) {
-          moreSettingsIcon[0].innerText = "\ue70e";
-        } else {
-          moreSettingsIcon[0].innerText = "\ue70d";
-        }
-      });
-    </script>
   </body>
 </html>

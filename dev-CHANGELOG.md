@@ -2,6 +2,22 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.2a
+> July 2, 2023
+- Added new switch input style.
+- Updated more options section items css style to simplified.
+- Removed voucher code background option.
+- Updated voucher codes input placeholder.
+- Changed add voucher button to `Save changes`.
+- Fixed input duration entering negative number.
+- Separated the languages to different file for better maintainability.
+- Added Wi-Fi Connect logo black at assets folder.
+- Added styles to voucher layout section.
+- Updated accent button height back to `32px`.
+- Updated select down icon size to `10px`.
+- Added an error message on aside form.
+- Partially added a functionality on form.
+
 ### v23.6.28a
 > June 28, 2023
 - Removed unused style property for button.
