@@ -139,12 +139,20 @@ html {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-body {
+.flex {
   display: flex;
 }
 
 .block {
-  display: block !important;
+  display: block;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .icon {
@@ -180,13 +188,42 @@ button:hover {
   opacity: 0.9;
 }
 
+.btn-standard {
+  flex-direction: row;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.0605);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.093);
+  border-left: 1px solid rgba(255, 255, 255, 0.0698);
+  border-right: 1px solid rgba(255, 255, 255, 0.0698);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0698);
+}
+
+.btn-standard:hover {
+  background-color: rgba(255, 255, 255, 0.0837);
+}
+
+.btn-standard:active {
+  background-color: rgba(255, 255, 255, 0.0326);
+  color: rgba(255, 255, 255, 0.786);
+  border: 1px solid rgba(255, 255, 255, 0.093);
+}
+
 button:active {
   opacity: 0.8;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-family: "Segoe UI Variable Small";
+  font-size: 12px;
+}
+
 .input-container {
-  position: relative;
   height: 32px;
   border-radius: 4px;
   overflow: hidden;
@@ -201,7 +238,6 @@ button:active {
 }
 
 .input-line {
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 1px;
@@ -241,8 +277,6 @@ button:active {
 }
 
 aside {
-  position: relative;
-  display: flex;
   flex-direction: column;
   background-color: #1a2030;
   flex-shrink: 0;
@@ -252,37 +286,15 @@ aside {
 }
 
 .heading-container {
-  position: relative;
   padding: 32px 32px 16px;
   border-bottom: 1px solid #30363d;
 }
 
 .heading-container p {
-  font-family: "Segoe UI Variable Small";
-  font-size: 12px;
   padding-top: 8px;
 }
 
-.heading-container .icon {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  padding: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.heading-container .icon:hover {
-  background-color: rgba(255, 255, 255, 0.0605);
-}
-
-.heading-container .icon:active {
-  background-color: rgba(255, 255, 255, 0.0419);
-  color: rgba(255, 255, 255, 0.786);
-}
-
 .form-container {
-  display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 16px 32px;
@@ -291,32 +303,31 @@ aside {
 }
 
 .group {
-  display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 .group-option {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.group p,
-.group-option p {
+.group h6,
+.group-option h6 {
   font-family: "Segoe UI Variable Small";
   font-size: 12px;
-  font-weight: bold;
+}
+
+.group p {
+  color: #fe3159;
 }
 
 .details {
-  display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
 .more-settings {
-  display: flex;
   align-items: center;
   gap: 8px;
   height: 32px;
@@ -349,102 +360,11 @@ aside {
 }
 
 .form-footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   padding: 32px;
   background-color: #1a2030;
   border-top: 1px solid #30363d;
-}
-
-.form-footer p {
-  display: none;
-  font-family: "Segoe UI Variable Small";
-  font-size: 12px;
-  text-align: center;
-  color: #fe3159;
-  margin-top: 8px;
-}
-
-main {
-  flex-grow: 1;
-  overflow-y: scroll;
-  height: 100vh;
-}
-
-.header-section {
-  z-index: 1;
-  position: sticky;
-  top: 0;
-  background-color: #1a2030;
-  padding: 16px 16px 0;
-}
-
-.header-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  background: linear-gradient(180deg, rgba(26, 32, 48, 0.666), transparent);
-  width: 100%;
-  height: 16px;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: url(../img/bloom-mica-dark.png) center center/cover no-repeat;
-  height: 80px;
-  padding: 0 32px;
-  border-radius: 8px;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-.btn-standard {
-  flex-direction: row;
-  width: auto;
-  background-color: rgba(255, 255, 255, 0.0605);
-  color: #fff;
-  border-top: 1px solid rgba(255, 255, 255, 0.093);
-  border-left: 1px solid rgba(255, 255, 255, 0.0698);
-  border-right: 1px solid rgba(255, 255, 255, 0.0698);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.0698);
-}
-
-.btn-standard:hover {
-  background-color: rgba(255, 255, 255, 0.0837);
-}
-
-.btn-standard:active {
-  background-color: rgba(255, 255, 255, 0.0326);
-  color: rgba(255, 255, 255, 0.786);
-  border: 1px solid rgba(255, 255, 255, 0.093);
-}
-
-.voucher-preview-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 32px 0;
-}
-
-.page-layout {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 1px;
-  background-color: #fff;
-  width: 8.5in;
-  height: 13in;
-  margin: auto;
-  padding: calc(0.2in + 1px);
-}
-
-.input-select-group {
-  display: flex;
 }
 
 .input-select-group .input-container {
@@ -453,11 +373,6 @@ h1 {
 
 .input-select-group .input {
   border-radius: 4px 0 0 4px;
-}
-
-.select-group {
-  position: relative;
-  display: flex;
 }
 
 .select-group select {
@@ -472,7 +387,6 @@ h1 {
 }
 
 .select-group .icon {
-  position: absolute;
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
@@ -488,16 +402,11 @@ h1 {
   cursor: pointer;
 }
 
-.input-switch {
-  position: relative;
-}
-
 .input-switch input {
   display: none;
 }
 
 .input-switch label {
-  display: block;
   cursor: pointer;
   transition: all 200ms;
   background-color: transparent;
@@ -546,8 +455,56 @@ h1 {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+main {
+  flex-grow: 1;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.header-section {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #1a2030;
+  padding: 16px 16px 0;
+}
+
+.header-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: linear-gradient(180deg, rgba(26, 32, 48, 0.666), transparent);
+  width: 100%;
+  height: 16px;
+}
+
+.header-container {
+  justify-content: space-between;
+  align-items: center;
+  background: url(../img/bloom-mica-dark.png) center center/cover no-repeat;
+  height: 80px;
+  padding: 0 32px;
+  border-radius: 8px;
+}
+
+.voucher-preview-container {
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.page-layout {
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 1px;
+  background-color: #fff;
+  width: 8.5in;
+  height: 13in;
+  margin: auto;
+  padding: calc(0.2in + 1px);
+}
+
 .voucher-container {
-  position: relative;
   flex-shrink: 0;
   height: 96px;
   width: 154px;
@@ -562,7 +519,6 @@ h1 {
 }
 
 .voucher-container p {
-  position: relative;
   font-family: "Segoe UI Variable Display";
   font-weight: bold;
   color: #000;
@@ -581,7 +537,6 @@ h1 {
 
 .voucher-container span {
   user-select: none;
-  position: absolute;
   top: 3px;
   right: 3px;
   font-family: "Segoe UI Variable Display";

@@ -2,6 +2,11 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.5a
+> July 5, 2023
+- Transfered the error message on aside form from footer to each of input for better user experience.
+- Optimized and minimized CSS classes.
+
 ### v23.7.2a
 > July 2, 2023
 - Added new switch input style.
