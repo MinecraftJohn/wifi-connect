@@ -2,9 +2,13 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.6a
+> July 6, 2023
+- Updated error system for validating on input text. Transfered the error message on each of required input text for better user experience.
+- Updated scroll color contrast and availability.
+
 ### v23.7.5a
 > July 5, 2023
-- Transfered the error message on aside form from footer to each of input for better user experience.
 - Optimized and minimized CSS classes.
 
 ### v23.7.2a

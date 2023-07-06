@@ -32,7 +32,7 @@
                 class="input"
                 id="data-duration-time"
               />
-              <div class="absolute input-line"></div>
+              <div id="duration-input-line" class="absolute input-line"></div>
             </div>
             <div class="relative flex select-group">
               <select class="btn-standard" id="data-duration-type">
@@ -43,7 +43,7 @@
               <i class="absolute icon">&#xe70d;</i>
             </div>
           </div>
-          <p>Error creating the vouchers.</p>
+          <p id="duration-error-msg" class="hidden">Enter a valid duration.</p>
         </div>
         <div class="flex group">
           <h6>Voucher Codes:</h6>
@@ -53,8 +53,22 @@
               class="textarea voucher-codes"
               id="data-vouchers"
             ></textarea>
-            <div class="absolute input-line"></div>
+            <div id="voucher-input-line" class="absolute input-line"></div>
           </div>
+          <p id="voucher-error-msg" class="hidden">
+            Enter atleast one valid entry.
+          </p>
+          <p class="relative input-container">
+            <textarea id="lineCounter" wrap="off" class="textarea" readonly>
+999</textarea
+            >
+            <textarea
+              id="codeEditor"
+              wrap="off"
+              placeholder="xxxxxx&#10;yyyyyy&#10;zzzzzz&#10;(to add multiple entry)"
+              class="textarea"
+            ></textarea>
+          </p>
         </div>
         <div class="flex details">
           <input type="checkbox" id="more-settings" />

@@ -109,6 +109,26 @@
 
 /* ################################################################ */
 
+@media screen and (min-width: 444px) {
+  *::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(151, 154, 162, 0.5);
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(151, 154, 162, 0.75);
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background-color: rgb(151, 154, 162);
+  }
+}
+
 html {
   overflow: hidden;
   background-color: #1a2030;
@@ -125,26 +145,16 @@ html {
   outline: none;
 }
 
-*::-webkit-scrollbar {
-  background-color: transparent;
-  width: 8px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.0605);
-  border-radius: 4px;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 .flex {
   display: flex;
 }
 
 .block {
   display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 .relative {
@@ -223,19 +233,28 @@ p {
   font-size: 12px;
 }
 
+aside {
+  flex-direction: column;
+  background-color: #1a2030;
+  flex-shrink: 0;
+  width: 300px;
+  height: 100vh;
+  border-right: 1px solid #30363d;
+}
+
 .input-container {
   height: 32px;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.input-container.textarea {
+/* .input-container.textarea {
   height: auto;
 }
 
 .input-container.textarea textarea {
   margin-bottom: -4px;
-}
+} */
 
 .input-line {
   bottom: 0;
@@ -248,6 +267,11 @@ p {
 .input-container .textarea:focus + .input-line {
   height: 2px;
   background-color: #0067c0;
+}
+
+.input-error {
+  height: 2px;
+  background-color: #fe3159;
 }
 
 .input[type="text"],
@@ -272,17 +296,49 @@ p {
   padding: 11px;
 }
 
-.input-container:has(.voucher-codes) {
-  height: 256px;
+/* ######################### */
+#codeEditor,
+#lineCounter {
+  /* padding: 10px 0;
+  height: 75vh;
+  border-radius: 0;
+  resize: none;
+  font-size: 16px;
+  line-height: 1.2;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; */
 }
 
-aside {
-  flex-direction: column;
-  background-color: #1a2030;
-  flex-shrink: 0;
-  width: 300px;
-  height: 100vh;
-  border-right: 1px solid #30363d;
+#lineCounter {
+  display: flex;
+  border-color: transparent;
+  overflow-y: hidden;
+  text-align: right;
+  box-shadow: none;
+  color: #707070;
+  background-color: #d8d8d8;
+  position: absolute;
+  width: 3.5rem;
+  /* Determine appearance of line counter */
+  background-color: #3e3d32;
+  border-color: #3e3d32;
+  color: #928869;
+}
+
+#codeEditor {
+  padding-left: calc(3.5rem + 5px);
+  width: 100%;
+  /* Determine appearance of code editor */
+  /* background-color: #272822;
+  border-color: #272822;
+  color: #ffffff; */
+}
+/* ################################# */
+
+.input-container:has(.voucher-codes) {
+  height: 256px;
 }
 
 .heading-container {
@@ -332,7 +388,7 @@ aside {
   gap: 8px;
   height: 32px;
   border-radius: 4px;
-  color: #00aeff;
+  color: #fff;
   cursor: pointer;
   user-select: none;
 }
