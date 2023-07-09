@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F1F3F9" />
     <title>Voucher Generator</title>
-    <link
-      rel="shortcut icon"
-      href="assets/img/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/generator-style.css" />
     <script src="assets/js/generator-script.js" defer></script>
   </head>
@@ -25,13 +21,7 @@
           <h6>Duration:</h6>
           <div class="flex input-select-group">
             <div class="relative input-container">
-              <input
-                type="number"
-                placeholder="0"
-                min="0"
-                class="input"
-                id="data-duration-time"
-              />
+              <input type="number" placeholder="0" min="0" class="input" id="data-duration-time" />
               <div id="duration-input-line" class="absolute input-line"></div>
             </div>
             <div class="relative flex select-group">
@@ -47,34 +37,21 @@
         </div>
         <div class="flex group">
           <h6>Voucher Codes:</h6>
-          <div class="relative input-container">
+          <div class="relative voucher-textarea">
+            <textarea id="voucher-line-counter" class="textarea line-counter">1</textarea>
             <textarea
-              placeholder="xxxxxx&#10;yyyyyy&#10;zzzzzz&#10;(to add multiple entry)"
-              class="textarea voucher-codes"
-              id="data-vouchers"
+              id="data-vouchers-code"
+              wrap="off"
+              placeholder="xxxxxx"
+              class="textarea voucher-editor"
             ></textarea>
             <div id="voucher-input-line" class="absolute input-line"></div>
           </div>
-          <p id="voucher-error-msg" class="hidden">
-            Enter atleast one valid entry.
-          </p>
-          <p class="relative input-container">
-            <textarea id="lineCounter" wrap="off" class="textarea" readonly>
-999</textarea
-            >
-            <textarea
-              id="codeEditor"
-              wrap="off"
-              placeholder="xxxxxx&#10;yyyyyy&#10;zzzzzz&#10;(to add multiple entry)"
-              class="textarea"
-            ></textarea>
-          </p>
+          <p id="voucher-error-msg" class="hidden">Enter atleast one valid entry.</p>
         </div>
         <div class="flex details">
           <input type="checkbox" id="more-settings" />
-          <label for="more-settings" class="flex more-settings"
-            >More options <i class="icon">&#xe70d;</i>
-          </label>
+          <label for="more-settings" class="flex more-settings">More options <i class="icon">&#xe70d;</i> </label>
           <div class="more-settings-container">
             <div class="flex group-option">
               <p>Layout Size (8.5x13in):</p>
@@ -93,42 +70,31 @@
             <div class="flex group-option">
               <p>Duration Background:</p>
               <div class="flex input-select-group">
-                <input
-                  type="color"
-                  class="input color btn-standard"
-                  id="data-duration-bg"
-                />
+                <input type="color" class="input color btn-standard" id="data-duration-bg" />
               </div>
             </div>
           </div>
         </div>
       </section>
       <section class="absolute form-footer">
-        <button id="data-submit-btn">
-          <i class="icon">&#xe73e;</i>Save changes
-        </button>
+        <button id="data-submit-btn"><i class="icon">&#xe73e;</i>Save changes</button>
       </section>
     </aside>
     <main>
       <header class="header-section">
         <div class="flex header-container">
           <h1>Document Preview</h1>
-          <button class="btn-standard">
-            <i class="icon">&#xe749;</i>Print vouchers
-          </button>
+          <button class="btn-standard"><i class="icon">&#xe749;</i>Print vouchers</button>
         </div>
       </header>
       <section class="flex voucher-preview-container">
-        <div class="flex page-layout">
+        <section class="flex page-layout">
           <div class="relative voucher-container">
-            <img
-              src="assets/svg/wifi-connect-logo-black.svg"
-              alt="Wi-Fi Connect Logo"
-            />
+            <div></div>
             <p class="relative">8002929</p>
             <span class="absolute">2 hrs</span>
           </div>
-        </div>
+        </section>
       </section>
     </main>
   </body>

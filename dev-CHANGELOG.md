@@ -2,6 +2,14 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.9a
+> July 9, 2023
+- Fixed scrollbar height.
+- Added line number to voucher code text area.
+- Improved inputs submit validation.
+- Added functionality to more options section.
+- Partially added ability to add voucher codes.
+
 ### v23.7.6a
 > July 6, 2023
 - Updated error system for validating on input text. Transfered the error message on each of required input text for better user experience.

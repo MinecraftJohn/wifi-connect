@@ -113,6 +113,7 @@
   *::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;
+    height: 8px;
   }
 
   *::-webkit-scrollbar-thumb {
@@ -127,6 +128,17 @@
   *::-webkit-scrollbar-thumb:active {
     background-color: rgb(151, 154, 162);
   }
+
+  *::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+:root {
+  --page-layout: 13in;
+  --duration-bg-color: #000000;
+  --duration-text-color: #ffffff;
+  --voucher-logo: url(../svg/wifi-connect-logo-black.svg);
 }
 
 html {
@@ -136,7 +148,7 @@ html {
 
 * {
   font-family: "Segoe UI Variable Text";
-  color: #fff;
+  color: #ffffff;
   font-size: 14px;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
@@ -183,7 +195,7 @@ button {
   cursor: pointer;
   user-select: none;
   background-color: #005fb8;
-  color: #fff;
+  color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
@@ -202,7 +214,7 @@ button:hover {
   flex-direction: row;
   width: auto;
   background-color: rgba(255, 255, 255, 0.0605);
-  color: #fff;
+  color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.093);
   border-left: 1px solid rgba(255, 255, 255, 0.0698);
   border-right: 1px solid rgba(255, 255, 255, 0.0698);
@@ -248,14 +260,6 @@ aside {
   overflow: hidden;
 }
 
-/* .input-container.textarea {
-  height: auto;
-}
-
-.input-container.textarea textarea {
-  margin-bottom: -4px;
-} */
-
 .input-line {
   bottom: 0;
   width: 100%;
@@ -264,7 +268,7 @@ aside {
 }
 
 .input-container .input:focus + .input-line,
-.input-container .textarea:focus + .input-line {
+.voucher-textarea .textarea:focus + .input-line {
   height: 2px;
   background-color: #0067c0;
 }
@@ -274,9 +278,7 @@ aside {
   background-color: #fe3159;
 }
 
-.input[type="text"],
-.input[type="number"],
-.textarea {
+.input {
   width: 100%;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.7);
@@ -285,60 +287,37 @@ aside {
   border-radius: 4px;
 }
 
-.input:focus,
-.textarea:focus {
+.input:focus {
   border: 1px solid #30363d;
 }
 
 .textarea {
+  background-color: transparent;
+  border: none;
   resize: none;
-  height: 256px;
-  padding: 11px;
 }
 
-/* ######################### */
-#codeEditor,
-#lineCounter {
-  /* padding: 10px 0;
-  height: 75vh;
-  border-radius: 0;
-  resize: none;
-  font-size: 16px;
-  line-height: 1.2;
-  outline: none;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; */
-}
-
-#lineCounter {
+.voucher-textarea {
   display: flex;
-  border-color: transparent;
-  overflow-y: hidden;
-  text-align: right;
-  box-shadow: none;
-  color: #707070;
-  background-color: #d8d8d8;
-  position: absolute;
-  width: 3.5rem;
-  /* Determine appearance of line counter */
-  background-color: #3e3d32;
-  border-color: #3e3d32;
-  color: #928869;
-}
-
-#codeEditor {
-  padding-left: calc(3.5rem + 5px);
-  width: 100%;
-  /* Determine appearance of code editor */
-  /* background-color: #272822;
-  border-color: #272822;
-  color: #ffffff; */
-}
-/* ################################# */
-
-.input-container:has(.voucher-codes) {
   height: 256px;
+  background-color: rgba(30, 30, 30, 0.7);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.line-counter {
+  color: #6e7681;
+  text-align: right;
+  width: 46px;
+  padding: 8px 16px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.voucher-editor {
+  flex: 1;
+  padding: 8px;
 }
 
 .heading-container {
@@ -388,7 +367,7 @@ aside {
   gap: 8px;
   height: 32px;
   border-radius: 4px;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   user-select: none;
 }
@@ -452,9 +431,11 @@ aside {
 }
 
 .input.color {
-  border-radius: 4px;
   flex-shrink: 0;
+  border-radius: 4px;
+  height: 20px;
   width: 38px;
+  padding: 0 4px;
   cursor: pointer;
 }
 
@@ -490,7 +471,7 @@ aside {
 }
 
 .input-switch:hover label::after {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .input-switch input:checked ~ label {
@@ -499,7 +480,7 @@ aside {
 }
 
 .input-switch input:checked ~ label::after {
-  background-color: #fff;
+  background-color: #ffffff;
   left: 21px;
 }
 
@@ -553,9 +534,9 @@ main {
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 1px;
-  background-color: #fff;
+  background-color: #ffffff;
   width: 8.5in;
-  height: 13in;
+  height: var(--page-layout);
   margin: auto;
   padding: calc(0.2in + 1px);
 }
@@ -567,8 +548,10 @@ main {
   outline: #d9d9d9 solid 1px;
 }
 
-.voucher-container img {
-  pointer-events: none;
+.voucher-container div {
+  background-image: var(--voucher-logo);
+  background-size: contain;
+  background-repeat: no-repeat;
   user-select: none;
   height: 18px;
   margin: 20px 0 0 10px;
@@ -577,7 +560,7 @@ main {
 .voucher-container p {
   font-family: "Segoe UI Variable Display";
   font-weight: bold;
-  color: #000;
+  color: #000000;
   font-size: 19px;
   margin: 8px 0 0 10px;
 }
@@ -600,7 +583,8 @@ main {
   font-size: 11px;
   text-align: center;
   line-height: 20px;
-  background-color: #000;
+  color: var(--duration-text-color);
+  background-color: var(--duration-bg-color);
   height: 20px;
   width: 44px;
   border-radius: 4px;

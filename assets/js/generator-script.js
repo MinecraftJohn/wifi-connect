@@ -1,16 +1,20 @@
-const moreSettingsBtn = document.getElementById("more-settings"),
-  moreSettingsIcon = document.querySelectorAll(".more-settings .icon"),
-  dataSubmitBtn = document.getElementById("data-submit-btn"),
-  dataDurationTime = document.getElementById("data-duration-time"),
-  dataDurationType = document.getElementById("data-duration-type"),
-  dataVouchers = document.getElementById("data-vouchers"),
-  dataPageLayout = document.getElementById("data-page-layout"),
-  dataColorLogo = document.getElementById("data-color-logo"),
-  dataDurationBG = document.getElementById("data-duration-bg"),
-  durationInputLine = document.getElementById("duration-input-line"),
-  voucherInputLine = document.getElementById("voucher-input-line"),
-  durationErrorMsg = document.getElementById("duration-error-msg"),
-  voucherErrorMsg = document.getElementById("voucher-error-msg");
+const moreSettingsBtn = document.getElementById("more-settings");
+const moreSettingsIcon = document.querySelectorAll(".more-settings .icon");
+const dataSubmitBtn = document.getElementById("data-submit-btn");
+const dataDurationTime = document.getElementById("data-duration-time");
+const dataDurationType = document.getElementById("data-duration-type");
+const dataVouchers = document.getElementById("data-vouchers-code");
+const dataPageLayout = document.getElementById("data-page-layout");
+const dataColorLogo = document.getElementById("data-color-logo");
+const dataDurationBG = document.getElementById("data-duration-bg");
+const durationInputLine = document.getElementById("duration-input-line");
+const voucherInputLine = document.getElementById("voucher-input-line");
+const durationErrorMsg = document.getElementById("duration-error-msg");
+const voucherErrorMsg = document.getElementById("voucher-error-msg");
+const voucherLineCounter = document.getElementById("voucher-line-counter");
+const htmlRoot = document.querySelector(":root");
+const pageLayout = document.querySelectorAll(".page-layout");
+let lineCountCache = 0;
 
 moreSettingsBtn.addEventListener("change", () => {
   if (moreSettingsBtn.checked) {
@@ -20,11 +24,33 @@ moreSettingsBtn.addEventListener("change", () => {
   }
 });
 
+const setDurationTextColor = (hexColor) => {
+  const color = hexColor.replace("#", "");
+  const red = parseInt(color.substr(0, 2), 16);
+  const green = parseInt(color.substr(2, 2), 16);
+  const blue = parseInt(color.substr(4, 2), 16);
+  const luminance = (0.299 * red + 0.587 * green + 0.114 * blue) / 255;
+  const textColor = luminance > 0.5 ? "#000000" : "#ffffff";
+  htmlRoot.style.setProperty("--duration-text-color", textColor);
+};
+
 const saveFormData = () => {
-  localStorage.setItem(
-    "dataDuration",
-    `{time: ${dataDurationTime.value}, type: ${dataDurationType.value}}`
-  );
+  dataPageLayout.checked
+    ? htmlRoot.style.setProperty("--page-layout", "13in")
+    : htmlRoot.style.setProperty("--page-layout", "11in");
+  htmlRoot.style.setProperty("--duration-bg-color", dataDurationBG.value);
+  setDurationTextColor(dataDurationBG.value);
+  dataColorLogo.checked
+    ? htmlRoot.style.setProperty("--voucher-logo", "url(../svg/wifi-connect-logo.svg)")
+    : htmlRoot.style.setProperty("--voucher-logo", "url(../svg/wifi-connect-logo-black.svg)");
+  dataVouchers.value.split("\n").map((code) => {
+    pageLayout[0].innerHTML += `
+      <div class="relative voucher-container">
+        <div></div>
+        <p class="relative">${code}</p>
+        <span class="absolute">2 hrs</span>
+      </div>`;
+  });
 };
 
 const triggeredErrorMsgDuration = (value) => {
@@ -49,13 +75,37 @@ const triggeredErrorMsgVoucher = (value) => {
   }
 };
 
+dataVouchers.addEventListener("scroll", () => {
+  voucherLineCounter.scrollTop = dataVouchers.scrollTop;
+  voucherLineCounter.scrollLeft = dataVouchers.scrollLeft;
+});
+
+const line_counter = () => {
+  const lineCount = dataVouchers.value.split("\n").length;
+  const outarr = new Array();
+  if (lineCountCache != lineCount) {
+    for (let x = 0; x < lineCount; x++) {
+      outarr[x] = x + 1;
+    }
+    voucherLineCounter.value = outarr.join("\n");
+  }
+  lineCountCache = lineCount;
+};
+
+dataVouchers.addEventListener("input", () => {
+  line_counter();
+});
+
 dataSubmitBtn.addEventListener("click", () => {
   triggeredErrorMsgDuration(false);
   triggeredErrorMsgVoucher(false);
-  if (dataDurationTime.value.length <= 0 && dataVouchers.value.length < 6) {
+  if (
+    (dataDurationTime.value.length <= 0 && dataVouchers.value.length < 6) ||
+    (dataDurationTime.value == 0 && dataVouchers.value.length < 6)
+  ) {
     triggeredErrorMsgDuration(true);
     triggeredErrorMsgVoucher(true);
-  } else if (dataDurationTime.value.length <= 0) {
+  } else if (dataDurationTime.value.length <= 0 || dataDurationTime.value == 0) {
     triggeredErrorMsgDuration(true);
   } else if (dataVouchers.value.length < 6) {
     triggeredErrorMsgVoucher(true);
@@ -64,27 +114,4 @@ dataSubmitBtn.addEventListener("click", () => {
     triggeredErrorMsgVoucher(false);
     saveFormData();
   }
-});
-
-// #####################
-var codeEditor = document.getElementById("codeEditor");
-var lineCounter = document.getElementById("lineCounter");
-codeEditor.addEventListener("scroll", () => {
-  lineCounter.scrollTop = codeEditor.scrollTop;
-  lineCounter.scrollLeft = codeEditor.scrollLeft;
-});
-var lineCountCache = 0;
-function line_counter() {
-  var lineCount = codeEditor.value.split("\n").length;
-  var outarr = new Array();
-  if (lineCountCache != lineCount) {
-    for (var x = 0; x < lineCount; x++) {
-      outarr[x] = x + 1;
-    }
-    lineCounter.value = outarr.join("\n");
-  }
-  lineCountCache = lineCount;
-}
-codeEditor.addEventListener("input", () => {
-  line_counter();
 });
