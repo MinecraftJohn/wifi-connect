@@ -12,8 +12,6 @@ const voucherInputLine = document.getElementById("voucher-input-line");
 const durationErrorMsg = document.getElementById("duration-error-msg");
 const voucherErrorMsg = document.getElementById("voucher-error-msg");
 const voucherLineCounter = document.getElementById("voucher-line-counter");
-const htmlRoot = document.querySelector(":root");
-const pageLayout = document.querySelectorAll(".page-layout");
 let lineCountCache = 0;
 
 moreSettingsBtn.addEventListener("change", () => {
@@ -24,6 +22,8 @@ moreSettingsBtn.addEventListener("change", () => {
   }
 });
 
+const setHTMLRoot = (property, value) => document.querySelector(":root").style.setProperty(property, value);
+
 const setDurationTextColor = (hexColor) => {
   const color = hexColor.replace("#", "");
   const red = parseInt(color.substr(0, 2), 16);
@@ -31,25 +31,27 @@ const setDurationTextColor = (hexColor) => {
   const blue = parseInt(color.substr(4, 2), 16);
   const luminance = (0.299 * red + 0.587 * green + 0.114 * blue) / 255;
   const textColor = luminance > 0.5 ? "#000000" : "#ffffff";
-  htmlRoot.style.setProperty("--duration-text-color", textColor);
+  setHTMLRoot("--duration-text-color", textColor);
 };
 
 const saveFormData = () => {
-  dataPageLayout.checked
-    ? htmlRoot.style.setProperty("--page-layout", "13in")
-    : htmlRoot.style.setProperty("--page-layout", "11in");
-  htmlRoot.style.setProperty("--duration-bg-color", dataDurationBG.value);
+  dataPageLayout.checked ? setHTMLRoot("--page-layout", "13in") : setHTMLRoot("--page-layout", "11in");
+  setHTMLRoot("--duration-bg-color", dataDurationBG.value);
   setDurationTextColor(dataDurationBG.value);
   dataColorLogo.checked
-    ? htmlRoot.style.setProperty("--voucher-logo", "url(../svg/wifi-connect-logo.svg)")
-    : htmlRoot.style.setProperty("--voucher-logo", "url(../svg/wifi-connect-logo-black.svg)");
+    ? setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo.svg)")
+    : setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo-black.svg)");
+  document.querySelector(".voucher-preview-container").innerHTML = `<section class="flex page-layout"></section>`;
+  // let xxx = 0;
   dataVouchers.value.split("\n").map((code) => {
-    pageLayout[0].innerHTML += `
+    document.querySelectorAll(".page-layout")[0].innerHTML += `
       <div class="relative voucher-container">
         <div></div>
         <p class="relative">${code}</p>
         <span class="absolute">2 hrs</span>
       </div>`;
+    // xxx++;
+    // console.log(xxx);
   });
 };
 
@@ -80,7 +82,7 @@ dataVouchers.addEventListener("scroll", () => {
   voucherLineCounter.scrollLeft = dataVouchers.scrollLeft;
 });
 
-const line_counter = () => {
+const updateLineCounter = () => {
   const lineCount = dataVouchers.value.split("\n").length;
   const outarr = new Array();
   if (lineCountCache != lineCount) {
@@ -93,7 +95,7 @@ const line_counter = () => {
 };
 
 dataVouchers.addEventListener("input", () => {
-  line_counter();
+  updateLineCounter();
 });
 
 dataSubmitBtn.addEventListener("click", () => {

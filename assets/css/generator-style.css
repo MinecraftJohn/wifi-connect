@@ -310,7 +310,7 @@ aside {
   color: #6e7681;
   text-align: right;
   width: 46px;
-  padding: 8px 16px;
+  padding: 8px 16px 8px 0;
   overflow: hidden;
   pointer-events: none;
 }
@@ -528,6 +528,7 @@ main {
   flex-direction: column;
   gap: 16px;
   margin: 32px 0;
+  page-break-after: always;
 }
 
 .page-layout {
@@ -546,6 +547,7 @@ main {
   height: 96px;
   width: 154px;
   outline: #d9d9d9 solid 1px;
+  overflow: hidden;
 }
 
 .voucher-container div {

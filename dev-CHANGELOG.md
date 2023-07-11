@@ -2,6 +2,11 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.11a
+> July 11, 2023
+- Fixed voucher codes textarea line counter wrong padding.
+- Optimized changing root properties codes.
+
 ### v23.7.9a
 > July 9, 2023
 - Fixed scrollbar height.
