@@ -41,17 +41,25 @@ const saveFormData = () => {
   dataColorLogo.checked
     ? setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo.svg)")
     : setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo-black.svg)");
-  document.querySelector(".voucher-preview-container").innerHTML = `<section class="flex page-layout"></section>`;
-  // let xxx = 0;
-  dataVouchers.value.split("\n").map((code) => {
-    document.querySelectorAll(".page-layout")[0].innerHTML += `
+
+  const documentContainer = document.querySelector(".voucher-preview-container");
+  let maxItem;
+  const vouchers = dataVouchers.value.split("\n");
+
+  documentContainer.innerHTML = "";
+  dataPageLayout.checked ? (maxItem = 60) : (maxItem = 50);
+  for (let i = 0; i < Math.ceil(vouchers.length / maxItem); i++) {
+    documentContainer.innerHTML += `<section class="flex page-layout"></section>`;
+  }
+  vouchers.map((code, index) => {
+    document.querySelectorAll(".page-layout")[Math.ceil((index + 1) / maxItem - 1)].innerHTML += `
       <div class="relative voucher-container">
-        <div></div>
+        <div class="logo"></div>
         <p class="relative">${code}</p>
-        <span class="absolute">2 hrs</span>
+        <span class="absolute">${dataDurationTime.value} ${
+      Number(dataDurationTime.value) > 1 ? dataDurationType.value + "s" : dataDurationType.value
+    }</span>
       </div>`;
-    // xxx++;
-    // console.log(xxx);
   });
 };
 

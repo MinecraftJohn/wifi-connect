@@ -316,17 +316,17 @@ aside {
 }
 
 .voucher-editor {
-  flex: 1;
+  flex-grow: 1;
   padding: 8px;
 }
 
 .heading-container {
-  padding: 32px 32px 16px;
+  padding: 48px 32px 24px;
   border-bottom: 1px solid #30363d;
 }
 
-.heading-container p {
-  padding-top: 8px;
+.heading-container img {
+  height: 32px;
 }
 
 .form-container {
@@ -550,7 +550,7 @@ main {
   overflow: hidden;
 }
 
-.voucher-container div {
+.voucher-container .logo {
   background-image: var(--voucher-logo);
   background-size: contain;
   background-repeat: no-repeat;
@@ -588,6 +588,7 @@ main {
   color: var(--duration-text-color);
   background-color: var(--duration-bg-color);
   height: 20px;
-  width: 44px;
+  min-width: 44px;
+  padding: 0 8px;
   border-radius: 4px;
 }

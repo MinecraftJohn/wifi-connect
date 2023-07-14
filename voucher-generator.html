@@ -13,8 +13,7 @@
   <body class="flex">
     <aside class="relative flex">
       <section class="relative heading-container">
-        <h1>Wi-Fi Connect</h1>
-        <p>A voucher generator page.</p>
+        <img src="assets/svg/wifi-connect-logo.svg" alt="Wi-Fi Connect Logo" />
       </section>
       <section class="flex form-container">
         <div class="flex group">
@@ -27,7 +26,7 @@
             <div class="relative flex select-group">
               <select class="btn-standard" id="data-duration-type">
                 <option value="min">Minutes</option>
-                <option value="hrs" selected>Hours</option>
+                <option value="hr">Hours</option>
                 <option value="day">Days</option>
               </select>
               <i class="absolute icon">&#xe70d;</i>
@@ -47,7 +46,7 @@
             ></textarea>
             <div id="voucher-input-line" class="absolute input-line"></div>
           </div>
-          <p id="voucher-error-msg" class="hidden">Enter atleast one valid entry.</p>
+          <p id="voucher-error-msg" class="hidden">Enter a valid voucher code.</p>
         </div>
         <div class="flex details">
           <input type="checkbox" id="more-settings" />
@@ -83,18 +82,12 @@
     <main>
       <header class="header-section">
         <div class="flex header-container">
-          <h1>Document Preview</h1>
+          <h1>Generated Preview</h1>
           <button class="btn-standard"><i class="icon">&#xe749;</i>Print vouchers</button>
         </div>
       </header>
       <section class="flex voucher-preview-container">
-        <section class="flex page-layout">
-          <div class="relative voucher-container">
-            <div></div>
-            <p class="relative">8002929</p>
-            <span class="absolute">2 hrs</span>
-          </div>
-        </section>
+        <section class="flex page-layout"></section>
       </section>
     </main>
   </body>

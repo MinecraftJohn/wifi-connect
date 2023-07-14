@@ -2,6 +2,14 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.14a
+> July 14, 2023
+- Removed default selected duration type.
+- Fully implemented the ability to add voucher codes.
+- Changed menu heading to Wi-Fi Connect logo.
+- Changed voucher codes error message.
+- Changed preview heading title to `Generated Preview`.
+
 ### v23.7.11a
 > July 11, 2023
 - Fixed voucher codes textarea line counter wrong padding.
