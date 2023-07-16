@@ -1,31 +1,31 @@
-<h2 align="center">
-  <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - An Customized Omada Portal"/>
-</h2>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - A Customized Omada Portal Web Page"/>
+  <h1>Customized Omada Controller Portal Web Page</h1>
+</div>
 
-> Warning: Assume that your customers don't have an internet connection so make sure you use base64 when importing your assets. The custom portal has file limit of 2MB, you can compress the file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/) and convert it into base64 at [base64-image.de](https://www.base64-image.de/).
+> Note: This custom portal uses firmware controller v4.4.3 below. We will need to use base64 method to display images because using an external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
 
 ### What is this?
 
-Wi-Fi Connect is an [Omada](https://omada.tplinkcloud.com/) Portal Customization using HTML, internal CSS and JavaScript to achieve the desired look of the page. The assets are imported thanks to the power of Base64.
-
-To customize your own Portal page for branding it as per your business, click [download the template](https://github.com/MinecraftJohn/wifi-connect/blob/main/omada-portal-template.html).
+Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. I open sourced this project to help the others get a custom portal web page in no time.
 
 ![Wi-Fi Connect UI Preview](https://github.com/MinecraftJohn/MinecraftJohn/blob/main/assets/other-repository/wifi-connect/wifi-connect-ui-preview.png?raw=true)
 
 ### Features
-
 - Light and Dark theme based on device time.
 - Using the look and feel of [Microsoft's Windows UI Controls](https://www.figma.com/community/file/1159947337437047524) which conform to the Fluent Design System.
+- Supports displaying images thanks to [base64 method](https://www.base64-image.de/).
+- Custom interface and events when trying to log in.
 - Supports mobile and large screen sizes.
-- Assets imported to page, thanks to base64 method.
-- Custom interface and events upon login success.
 
-### Languages used
+### How to use
+1. Download the [index.html](https://github.com/MinecraftJohn/wifi-connect/blob/main/index.html) file.
+2. Go to your `Settings` > `Authentication` > `Portal Customization`
+3. In the type: section, check the `Import Customized Page` checkbox.
+4. Import the downloaded `index.html` and click Apply button to apply your changes.
 
-![HTML](https://raw.githubusercontent.com/MinecraftJohn/MinecraftJohn/0b7814e44ddd80c4105d8d3c98edba4f90d62f34/assets/svg/html.svg)
-![CSS](https://raw.githubusercontent.com/MinecraftJohn/MinecraftJohn/0b7814e44ddd80c4105d8d3c98edba4f90d62f34/assets/svg/css.svg)
-![JavaScript](https://raw.githubusercontent.com/MinecraftJohn/MinecraftJohn/7b446cb89db20f0427ca35571531cb42b038b3aa/assets/svg/javascript.svg)
+Note: The custom portal has file limit of 2MB, you can compress the file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/).
 
 ### Changelog
 
-See [CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/main/CHANGELOG.md).
+Go to [CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/main/CHANGELOG.md) to see previous changes or [dev-CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/developoment/CHANGELOG.md) for notable development changes.
