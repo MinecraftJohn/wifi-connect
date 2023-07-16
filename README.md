@@ -7,7 +7,7 @@
 
 ### What is this?
 
-Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. I open sourced this project to help the others get a custom portal web page in no time.
+Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. I open source this project to help the others get a custom portal web page in no time and open collaboration at the same time.
 
 ![Wi-Fi Connect UI Preview](https://github.com/MinecraftJohn/MinecraftJohn/blob/main/assets/other-repository/wifi-connect/wifi-connect-ui-preview.png?raw=true)
 
