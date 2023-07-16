@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - A Customized Omada Portal Web Page"/>
-  <h1>Customized Omada Controller Portal Web Page</h1>
+  <h1>Custom Portal Web Page</h1>
 </div>
 
 > Note: This custom portal uses firmware controller v4.4.3 below. We will need to use base64 method to display images because using an external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
@@ -28,4 +28,4 @@ Note: The custom portal has file limit of 2MB, you can compress the file without
 
 ### Changelog
 
-Go to [CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/main/CHANGELOG.md) to see previous changes or [dev-CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/developoment/CHANGELOG.md) for notable development changes.
+Go to [CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/main/CHANGELOG.md) to see previous changes or [dev-CHANGELOG.md](https://github.com/MinecraftJohn/wmdc-quotation-system/edit/development/README.md) for notable development changes.
