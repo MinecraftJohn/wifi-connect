@@ -1,6 +1,12 @@
 # Wi-Fi Connect Changelog
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
+### v1.1.1
+> July 16, 2023
+- Optimized and improved the page.
+- Fixed voucher input field accepts text.
+- Fixed view height kinda not working on mobile devices.
+
 ### v1.1.0
 > November 17, 2022
 - Fixed button and input text field not rendering properly on mobile.
