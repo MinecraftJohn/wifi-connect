@@ -28,4 +28,4 @@ Note: The custom portal has file limit of 2MB, you can compress the file without
 
 ### Changelog
 
-Go to [CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/main/CHANGELOG.md) to see previous changes or [dev-CHANGELOG.md](https://github.com/MinecraftJohn/wmdc-quotation-system/edit/development/README.md) for notable development changes.
+Go to [CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/main/CHANGELOG.md) to see previous changes or [dev-CHANGELOG.md](https://github.com/MinecraftJohn/wifi-connect/blob/development/dev-CHANGELOG.md) for notable development changes.
