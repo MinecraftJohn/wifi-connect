@@ -3,7 +3,7 @@
   <h1>Custom Portal Web Page</h1>
 </div>
 
-> Note: This project was tested on controller firmware v1.7.0 only. We will need to use base64 method to display images because using an external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
+> Note: This project was tested on controller firmware v1.7.0 only. We will need to use base64 method to display images because using external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
 
 ### What is this?
 
