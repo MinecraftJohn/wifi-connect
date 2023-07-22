@@ -3,11 +3,11 @@
   <h1>Custom Portal Web Page</h1>
 </div>
 
-> Note: This custom portal uses firmware controller v4.4.3 below. We will need to use base64 method to display images because using an external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
+> Note: This project was tested on controller firmware v1.7.0 only. We will need to use base64 method to display images because using an external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
 
 ### What is this?
 
-Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. I open source this project to help the others get a custom portal web page in no time and open collaboration at the same time.
+Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. It only use `Hotspot type: Voucher` please be aware. I open source this project to help the others get a custom portal web page in no time and open collaboration at the same time.
 
 ![Wi-Fi Connect UI Preview](https://github.com/MinecraftJohn/MinecraftJohn/blob/main/assets/other-repository/wifi-connect/wifi-connect-ui-preview.png?raw=true)
 
@@ -24,7 +24,7 @@ Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/
 3. In the type: section, check the `Import Customized Page` checkbox.
 4. Import the downloaded `index.html` and click Apply button to apply your changes.
 
-Note: The custom portal has file limit of 2MB, you can compress the file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/).
+Note: The custom portal has file limit of 2MB, you can compress your image file without losing quality at [imagesmaller.com](https://www.imagesmaller.com/).
 
 ### Changelog
 
