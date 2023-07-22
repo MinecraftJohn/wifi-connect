@@ -1,6 +1,10 @@
 # Wi-Fi Connect Changelog
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
+### v1.1.2
+> July 22, 2023
+- Optimized codes and added an error indicator for input voucher.
+
 ### v1.1.1
 > July 16, 2023
 - Optimized and improved the page.

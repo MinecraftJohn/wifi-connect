@@ -2,6 +2,11 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.22a
+> July 22, 2023
+- Updated `README.md`.
+- Optimized codes and added an error indicator for input voucher.
+
 ### v23.7.16a
 > July 16, 2023
 - Updated `README.md`.
