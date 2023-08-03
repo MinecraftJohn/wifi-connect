@@ -7,11 +7,12 @@
 
 ### What is this?
 
-Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. It only use `Hotspot type: Voucher` please be aware. I open source this project to help the others get a custom portal web page in no time and open collaboration at the same time.
+Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. It only use `Authentication Type: Hotspot; Hotspot type: Voucher` please be aware. I open source this project to help the others get a custom portal web page in no time and open collaboration at the same time.
 
-![Wi-Fi Connect UI Preview](https://github.com/MinecraftJohn/MinecraftJohn/blob/main/assets/other-repository/wifi-connect/wifi-connect-ui-preview.png?raw=true)
+<kbd><img src="https://i.imgur.com/NBQcJYr.png" alt="Voucher Generator UI Preview"></kbd>
 
 ### Features
+
 - Light and Dark theme based on device time.
 - Using the look and feel of [Microsoft's Windows UI Controls](https://www.figma.com/community/file/1159947337437047524) which conform to the Fluent Design System.
 - Supports displaying images thanks to [base64 method](https://www.base64-image.de/).
@@ -19,6 +20,7 @@ Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/
 - Supports mobile and large screen sizes.
 
 ### How to use
+
 1. Download the [index.html](https://github.com/MinecraftJohn/wifi-connect/blob/main/index.html) file.
 2. Go to your `Settings` > `Authentication` > `Portal Customization`
 3. In the type: section, check the `Import Customized Page` checkbox.

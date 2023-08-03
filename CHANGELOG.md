@@ -1,6 +1,14 @@
 # Wi-Fi Connect Changelog
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
+
+### v1.2.0
+> August 3, 2023
+- Overhaul codes, styles properties, and scripts.
+- Added support to older version of mobile browsers.
+- Fixed submit form using `Enter` keyboard to submit not working.
+- Updated log in success animation.
+
 ### v1.1.2
 > July 22, 2023
 - Optimized codes and added an error indicator for input voucher.
