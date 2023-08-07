@@ -1,15 +1,15 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - A Customized Omada Portal Web Page"/>
+  <img src="https://i.imgur.com/x4n6SUk.png" alt="Wi-Fi Connect - A Customized Omada Portal Web Page"/>
   <h1>Custom Portal Web Page</h1>
 </div>
 
-> Note: This project was tested on controller firmware v1.7.0 only. We will need to use base64 method to display images because using external is not [supported](https://www.tp-link.com/us/support/faq/3264/).
+> Note: This project was tested on controller firmware v1.7.0 only. We will need to use base64 method to display images because using external is [not supported](https://www.tp-link.com/us/support/faq/3264/).
 
 ### What is this?
 
 Wi-Fi Connect is my customized [Omada Controller](https://omada.tplinkcloud.com/) portal web page with the help of base64 method to display images. It only use `Authentication Type: Hotspot; Hotspot type: Voucher` please be aware. I open source this project to help the others get a custom portal web page in no time and open collaboration at the same time.
 
-<kbd><img src="https://i.imgur.com/NBQcJYr.png" alt="Voucher Generator UI Preview"></kbd>
+<kbd><img src="https://i.imgur.com/NBQcJYr.png" alt="Wi-Fi Connect UI Preview"></kbd>
 
 ### Features
 
