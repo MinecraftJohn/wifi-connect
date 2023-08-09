@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/x4n6SUk.png" alt="Wi-Fi Connect - A Customized Omada Portal Web Page"/>
+  <img src="https://i.imgur.com/AtYczBM.png" alt="Wi-Fi Connect - A Customized Omada Portal Web Page"/>
   <h1>Custom Portal Web Page</h1>
 </div>
 
