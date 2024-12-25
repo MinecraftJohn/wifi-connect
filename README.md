@@ -3,7 +3,7 @@
   <h1>Omada Custom Portal Page</h1>
 </div>
 
-> Note: This project was tested on controller firmware v5.14.32.56 only. Files are not organized on folder or it will not work.
+> Note: This project was tested on controller firmware v5.14.32.56 only. Files are not organized on folder or it will not work, external SVG cannot be read.
 
 ### What is this?
 

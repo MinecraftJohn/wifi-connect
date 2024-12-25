@@ -301,7 +301,7 @@ Ajax.post(
               }, 400);
             } else {
               document.getElementById("oper-hint").innerHTML = errorHintMap[data.errorCode];
-              document.getElementById("hint-container").classList.remove("hidden");
+              document.getElementById("hint-container").classList.replace("hidden", "flex");
               document.getElementById("input-line").classList.add("error");
               navigator.vibrate(300);
             }

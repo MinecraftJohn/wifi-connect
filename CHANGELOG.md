@@ -1,6 +1,13 @@
 # Wi-Fi Connect Changelog
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
+### v1.2.1
+> November 11, 2024
+- Fixed portal height extend on mobile view
+- Updated sources, now using external file instead of base64 code
+- Updated ping sound to play after 400ms
+- Increased input and button height to 48px
+- Updated error icon from [Microsoft Fluent Icon](https://fluenticon.com/).
 
 ### v1.2.0
 > August 3, 2023
