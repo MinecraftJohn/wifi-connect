@@ -2,6 +2,15 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v24.11.18a
+> November 11, 2024
+- Updated `README.md`.
+- Fixed portal height extend on mobile view
+- Updated sources, now using external file instead of base64 code
+- Updated ping sound to play after 400ms
+- Increased input and button height to 48px
+- Updated error icon from [Microsoft Fluent Icon](https://fluenticon.com/).
+
 ### v23.8.3a
 > August 3, 2023
 - Updated `README.md`.
